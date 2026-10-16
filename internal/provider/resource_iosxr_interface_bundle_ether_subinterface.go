@@ -180,6 +180,10 @@ func (r *InterfaceBundleEtherSubinterfaceResource) Schema(ctx context.Context, r
 				MarkdownDescription: helpers.NewAttributeDescription("Single VLAN id or start of VLAN range").String,
 				Optional:            true,
 			},
+			"l2transport_encapsulation_untagged": schema.BoolAttribute{
+				MarkdownDescription: helpers.NewAttributeDescription("Packets with no explicit VLAN tag").String,
+				Optional:            true,
+			},
 			"rewrite_ingress_tag_pop_one": schema.BoolAttribute{
 				MarkdownDescription: helpers.NewAttributeDescription("Remove outer tag only").String,
 				Optional:            true,

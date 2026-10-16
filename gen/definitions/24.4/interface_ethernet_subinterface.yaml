@@ -113,6 +113,10 @@ attributes:
   - yang_name: Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/second-dot1q
     example: 400
     exclude_test: true
+  - yang_name: Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged
+    example: false
+    exclude_test: true
+    exclude_example: true
   - yang_name: Cisco-IOS-XR-um-l2-ethernet-cfg:rewrite/ingress/tag/pop/one
     example: true
     exclude_test: true

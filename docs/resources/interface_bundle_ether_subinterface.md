@@ -389,6 +389,7 @@ resource "iosxr_interface_bundle_ether_subinterface" "example" {
 - `l2transport` (Boolean) l2transport sub-interface
 - `l2transport_encapsulation_dot1q_second_dot1q` (String) Single VLAN id or start of VLAN range
 - `l2transport_encapsulation_dot1q_vlan_id` (String) Single VLAN id or start of VLAN range
+- `l2transport_encapsulation_untagged` (Boolean) Packets with no explicit VLAN tag
 - `lldp` (Boolean) LLDP interface configuration commands
 - `lldp_receive_disable` (Boolean) Disable LLDP RX on an interface
 - `lldp_transmit_disable` (Boolean) Disable LLDP TX on an interface

@@ -56,6 +56,7 @@ type InterfaceEthernetSubinterface struct {
 	EncapsulationDot1qSecondDot1q                      types.Int64                                                                  `tfsdk:"encapsulation_dot1q_second_dot1q"`
 	L2transportEncapsulationDot1qVlanId                types.String                                                                 `tfsdk:"l2transport_encapsulation_dot1q_vlan_id"`
 	L2transportEncapsulationDot1qSecondDot1q           types.String                                                                 `tfsdk:"l2transport_encapsulation_dot1q_second_dot1q"`
+	L2transportEncapsulationUntagged                   types.Bool                                                                   `tfsdk:"l2transport_encapsulation_untagged"`
 	RewriteIngressTagPopOne                            types.Bool                                                                   `tfsdk:"rewrite_ingress_tag_pop_one"`
 	RewriteIngressTagPopTwo                            types.Bool                                                                   `tfsdk:"rewrite_ingress_tag_pop_two"`
 	Shutdown                                           types.Bool                                                                   `tfsdk:"shutdown"`
@@ -248,6 +249,7 @@ type InterfaceEthernetSubinterfaceData struct {
 	EncapsulationDot1qSecondDot1q                      types.Int64                                                                  `tfsdk:"encapsulation_dot1q_second_dot1q"`
 	L2transportEncapsulationDot1qVlanId                types.String                                                                 `tfsdk:"l2transport_encapsulation_dot1q_vlan_id"`
 	L2transportEncapsulationDot1qSecondDot1q           types.String                                                                 `tfsdk:"l2transport_encapsulation_dot1q_second_dot1q"`
+	L2transportEncapsulationUntagged                   types.Bool                                                                   `tfsdk:"l2transport_encapsulation_untagged"`
 	RewriteIngressTagPopOne                            types.Bool                                                                   `tfsdk:"rewrite_ingress_tag_pop_one"`
 	RewriteIngressTagPopTwo                            types.Bool                                                                   `tfsdk:"rewrite_ingress_tag_pop_two"`
 	Shutdown                                           types.Bool                                                                   `tfsdk:"shutdown"`
@@ -639,6 +641,11 @@ func (data InterfaceEthernetSubinterface) toBody(ctx context.Context, providerVe
 	}
 	if !data.L2transportEncapsulationDot1qSecondDot1q.IsNull() && !data.L2transportEncapsulationDot1qSecondDot1q.IsUnknown() {
 		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.second-dot1q", data.L2transportEncapsulationDot1qSecondDot1q.ValueString())
+	}
+	if !data.L2transportEncapsulationUntagged.IsNull() && !data.L2transportEncapsulationUntagged.IsUnknown() {
+		if data.L2transportEncapsulationUntagged.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged", map[string]string{})
+		}
 	}
 	if !data.RewriteIngressTagPopOne.IsNull() && !data.RewriteIngressTagPopOne.IsUnknown() {
 		if data.RewriteIngressTagPopOne.ValueBool() {
@@ -1883,6 +1890,15 @@ func (data *InterfaceEthernetSubinterface) updateFromBody(ctx context.Context, r
 		data.L2transportEncapsulationDot1qSecondDot1q = types.StringValue(value.String())
 	} else {
 		data.L2transportEncapsulationDot1qSecondDot1q = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged"); !data.L2transportEncapsulationUntagged.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationUntagged = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationUntagged = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationUntagged = types.BoolNull()
 	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:rewrite.ingress.tag.pop.one"); !data.RewriteIngressTagPopOne.IsNull() {
 		if value.Exists() {
@@ -4125,6 +4141,11 @@ func (data *InterfaceEthernetSubinterface) fromBody(ctx context.Context, res []b
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.second-dot1q"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
 		data.L2transportEncapsulationDot1qSecondDot1q = types.StringValue(value.String())
 	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged"); value.Exists() {
+		data.L2transportEncapsulationUntagged = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationUntagged = types.BoolValue(false)
+	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:rewrite.ingress.tag.pop.one"); value.Exists() {
 		data.RewriteIngressTagPopOne = types.BoolValue(true)
 	} else {
@@ -5311,6 +5332,11 @@ func (data *InterfaceEthernetSubinterfaceData) fromBody(ctx context.Context, res
 	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.second-dot1q"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
 		data.L2transportEncapsulationDot1qSecondDot1q = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged"); value.Exists() {
+		data.L2transportEncapsulationUntagged = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationUntagged = types.BoolValue(false)
 	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:rewrite.ingress.tag.pop.one"); value.Exists() {
 		data.RewriteIngressTagPopOne = types.BoolValue(true)
@@ -7835,6 +7861,9 @@ func (data *InterfaceEthernetSubinterface) getDeletedItems(ctx context.Context, 
 	if !state.RewriteIngressTagPopOne.IsNull() && data.RewriteIngressTagPopOne.IsNull() {
 		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:rewrite/ingress/tag/pop/one"))
 	}
+	if !state.L2transportEncapsulationUntagged.IsNull() && data.L2transportEncapsulationUntagged.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged"))
+	}
 	if !state.L2transportEncapsulationDot1qSecondDot1q.IsNull() && data.L2transportEncapsulationDot1qSecondDot1q.IsNull() {
 		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/second-dot1q"))
 	}
@@ -8395,6 +8424,9 @@ func (data *InterfaceEthernetSubinterface) getEmptyLeafsDelete(ctx context.Conte
 	}
 	if !data.RewriteIngressTagPopOne.IsNull() && !data.RewriteIngressTagPopOne.ValueBool() {
 		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:rewrite/ingress/tag/pop/one"))
+	}
+	if !data.L2transportEncapsulationUntagged.IsNull() && !data.L2transportEncapsulationUntagged.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged"))
 	}
 	for i := range data.ServicePolicyOutput {
 		keys := [...]string{"service-policy-name"}
@@ -9289,6 +9321,9 @@ func (data *InterfaceEthernetSubinterface) getDeletePaths(ctx context.Context, v
 	}
 	if !data.RewriteIngressTagPopOne.IsNull() {
 		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:rewrite/ingress/tag/pop/one"))
+	}
+	if !data.L2transportEncapsulationUntagged.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged"))
 	}
 	if !data.L2transportEncapsulationDot1qSecondDot1q.IsNull() {
 		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/second-dot1q"))

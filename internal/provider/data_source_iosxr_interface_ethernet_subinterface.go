@@ -147,6 +147,10 @@ func (d *InterfaceEthernetSubinterfaceDataSource) Schema(ctx context.Context, re
 				MarkdownDescription: "Single VLAN id or start of VLAN range",
 				Computed:            true,
 			},
+			"l2transport_encapsulation_untagged": schema.BoolAttribute{
+				MarkdownDescription: "Packets with no explicit VLAN tag",
+				Computed:            true,
+			},
 			"rewrite_ingress_tag_pop_one": schema.BoolAttribute{
 				MarkdownDescription: "Remove outer tag only",
 				Computed:            true,

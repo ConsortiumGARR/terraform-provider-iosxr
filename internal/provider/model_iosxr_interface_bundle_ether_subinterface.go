@@ -37,376 +37,630 @@ import (
 
 // Section below is generated&owned by "gen/generator.go". //template:begin types
 type InterfaceBundleEtherSubinterface struct {
-	Device                                             types.String                                                                    `tfsdk:"device"`
-	Id                                                 types.String                                                                    `tfsdk:"id"`
-	DeleteMode                                         types.String                                                                    `tfsdk:"delete_mode"`
-	Name                                               types.String                                                                    `tfsdk:"name"`
-	L2transport                                        types.Bool                                                                      `tfsdk:"l2transport"`
-	PointToPoint                                       types.Bool                                                                      `tfsdk:"point_to_point"`
-	Multipoint                                         types.Bool                                                                      `tfsdk:"multipoint"`
-	Dampening                                          types.Bool                                                                      `tfsdk:"dampening"`
-	DampeningDecayHalfLife                             types.Int64                                                                     `tfsdk:"dampening_decay_half_life"`
-	DampeningReuseThreshold                            types.Int64                                                                     `tfsdk:"dampening_reuse_threshold"`
-	DampeningSuppressThreshold                         types.Int64                                                                     `tfsdk:"dampening_suppress_threshold"`
-	DampeningMaxSuppressTime                           types.Int64                                                                     `tfsdk:"dampening_max_suppress_time"`
-	ServicePolicyInput                                 []InterfaceBundleEtherSubinterfaceServicePolicyInput                            `tfsdk:"service_policy_input"`
-	ServicePolicyOutput                                []InterfaceBundleEtherSubinterfaceServicePolicyOutput                           `tfsdk:"service_policy_output"`
-	EncapsulationDot1qVlanId                           types.Int64                                                                     `tfsdk:"encapsulation_dot1q_vlan_id"`
-	EncapsulationDot1qSecondDot1q                      types.Int64                                                                     `tfsdk:"encapsulation_dot1q_second_dot1q"`
-	L2transportEncapsulationDot1qVlanId                types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id"`
-	L2transportEncapsulationDot1qSecondDot1q           types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_second_dot1q"`
-	L2transportEncapsulationUntagged                   types.Bool                                                                      `tfsdk:"l2transport_encapsulation_untagged"`
-	RewriteIngressTagPopOne                            types.Bool                                                                      `tfsdk:"rewrite_ingress_tag_pop_one"`
-	RewriteIngressTagPopTwo                            types.Bool                                                                      `tfsdk:"rewrite_ingress_tag_pop_two"`
-	Shutdown                                           types.Bool                                                                      `tfsdk:"shutdown"`
-	Mtu                                                types.Int64                                                                     `tfsdk:"mtu"`
-	LoggingEventsLinkStatus                            types.Bool                                                                      `tfsdk:"logging_events_link_status"`
-	Bandwidth                                          types.Int64                                                                     `tfsdk:"bandwidth"`
-	Description                                        types.String                                                                    `tfsdk:"description"`
-	LoadInterval                                       types.Int64                                                                     `tfsdk:"load_interval"`
-	Vrf                                                types.String                                                                    `tfsdk:"vrf"`
-	Ipv4Address                                        types.String                                                                    `tfsdk:"ipv4_address"`
-	Ipv4Netmask                                        types.String                                                                    `tfsdk:"ipv4_netmask"`
-	Ipv4RouteTag                                       types.Int64                                                                     `tfsdk:"ipv4_route_tag"`
-	Ipv4Algorithm                                      types.Int64                                                                     `tfsdk:"ipv4_algorithm"`
-	Ipv4Secondaries                                    []InterfaceBundleEtherSubinterfaceIpv4Secondaries                               `tfsdk:"ipv4_secondaries"`
-	Ipv4PointToPoint                                   types.Bool                                                                      `tfsdk:"ipv4_point_to_point"`
-	Ipv4Mtu                                            types.Int64                                                                     `tfsdk:"ipv4_mtu"`
-	Ipv4Redirects                                      types.Bool                                                                      `tfsdk:"ipv4_redirects"`
-	Ipv4MaskReply                                      types.Bool                                                                      `tfsdk:"ipv4_mask_reply"`
-	Ipv4HelperAddresses                                []InterfaceBundleEtherSubinterfaceIpv4HelperAddresses                           `tfsdk:"ipv4_helper_addresses"`
-	Ipv4UnreachablesDisable                            types.Bool                                                                      `tfsdk:"ipv4_unreachables_disable"`
-	Ipv4TcpMssAdjust                                   types.Bool                                                                      `tfsdk:"ipv4_tcp_mss_adjust"`
-	Ipv4Unnumbered                                     types.String                                                                    `tfsdk:"ipv4_unnumbered"`
-	Ipv4ForwardingEnable                               types.Bool                                                                      `tfsdk:"ipv4_forwarding_enable"`
-	Ipv4TtlPropagateDisable                            types.Bool                                                                      `tfsdk:"ipv4_ttl_propagate_disable"`
-	Ipv4VerifyUnicastSourceReachableViaType            types.String                                                                    `tfsdk:"ipv4_verify_unicast_source_reachable_via_type"`
-	Ipv4VerifyUnicastSourceReachableViaAllowSelfPing   types.Bool                                                                      `tfsdk:"ipv4_verify_unicast_source_reachable_via_allow_self_ping"`
-	Ipv4VerifyUnicastSourceReachableViaAllowDefault    types.Bool                                                                      `tfsdk:"ipv4_verify_unicast_source_reachable_via_allow_default"`
-	Ipv4AccessGroupIngressAcl1                         types.String                                                                    `tfsdk:"ipv4_access_group_ingress_acl1"`
-	Ipv4AccessGroupIngressHardwareCount                types.Bool                                                                      `tfsdk:"ipv4_access_group_ingress_hardware_count"`
-	Ipv4AccessGroupIngressInterfaceStatistics          types.Bool                                                                      `tfsdk:"ipv4_access_group_ingress_interface_statistics"`
-	Ipv4AccessGroupIngressCompress                     types.Int64                                                                     `tfsdk:"ipv4_access_group_ingress_compress"`
-	Ipv4AccessGroupEgressAcl                           types.String                                                                    `tfsdk:"ipv4_access_group_egress_acl"`
-	Ipv4AccessGroupEgressHardwareCount                 types.Bool                                                                      `tfsdk:"ipv4_access_group_egress_hardware_count"`
-	Ipv4AccessGroupEgressInterfaceStatistics           types.Bool                                                                      `tfsdk:"ipv4_access_group_egress_interface_statistics"`
-	Ipv4AccessGroupEgressCompress                      types.Int64                                                                     `tfsdk:"ipv4_access_group_egress_compress"`
-	Ipv6VerifyUnicastSourceReachableViaType            types.String                                                                    `tfsdk:"ipv6_verify_unicast_source_reachable_via_type"`
-	Ipv6VerifyUnicastSourceReachableViaAllowSelfPing   types.Bool                                                                      `tfsdk:"ipv6_verify_unicast_source_reachable_via_allow_self_ping"`
-	Ipv6VerifyUnicastSourceReachableViaAllowDefault    types.Bool                                                                      `tfsdk:"ipv6_verify_unicast_source_reachable_via_allow_default"`
-	Ipv6AccessGroupIngressAcl1                         types.String                                                                    `tfsdk:"ipv6_access_group_ingress_acl1"`
-	Ipv6AccessGroupIngressInterfaceStatistics          types.Bool                                                                      `tfsdk:"ipv6_access_group_ingress_interface_statistics"`
-	Ipv6AccessGroupIngressCompress                     types.Int64                                                                     `tfsdk:"ipv6_access_group_ingress_compress"`
-	Ipv6AccessGroupEgressAcl                           types.String                                                                    `tfsdk:"ipv6_access_group_egress_acl"`
-	Ipv6AccessGroupEgressInterfaceStatistics           types.Bool                                                                      `tfsdk:"ipv6_access_group_egress_interface_statistics"`
-	Ipv6AccessGroupEgressCompress                      types.Int64                                                                     `tfsdk:"ipv6_access_group_egress_compress"`
-	Ipv6Enable                                         types.Bool                                                                      `tfsdk:"ipv6_enable"`
-	Ipv6TtlPropagateDisable                            types.Bool                                                                      `tfsdk:"ipv6_ttl_propagate_disable"`
-	Ipv6Addresses                                      []InterfaceBundleEtherSubinterfaceIpv6Addresses                                 `tfsdk:"ipv6_addresses"`
-	Ipv6LinkLocalAddress                               types.String                                                                    `tfsdk:"ipv6_link_local_address"`
-	Ipv6LinkLocalZone                                  types.String                                                                    `tfsdk:"ipv6_link_local_zone"`
-	Ipv6LinkLocalRouteTag                              types.Int64                                                                     `tfsdk:"ipv6_link_local_route_tag"`
-	Ipv6Eui64Addresses                                 []InterfaceBundleEtherSubinterfaceIpv6Eui64Addresses                            `tfsdk:"ipv6_eui64_addresses"`
-	Ipv6Autoconfig                                     types.Bool                                                                      `tfsdk:"ipv6_autoconfig"`
-	Ipv6Dhcp                                           types.Bool                                                                      `tfsdk:"ipv6_dhcp"`
-	Ipv6Mtu                                            types.Int64                                                                     `tfsdk:"ipv6_mtu"`
-	Ipv6UnreachablesDisable                            types.Bool                                                                      `tfsdk:"ipv6_unreachables_disable"`
-	Ipv6TcpMssAdjust                                   types.Bool                                                                      `tfsdk:"ipv6_tcp_mss_adjust"`
-	Ipv6NdReachableTime                                types.Int64                                                                     `tfsdk:"ipv6_nd_reachable_time"`
-	Ipv6NdCacheLimit                                   types.Int64                                                                     `tfsdk:"ipv6_nd_cache_limit"`
-	Ipv6NdDadAttempts                                  types.Int64                                                                     `tfsdk:"ipv6_nd_dad_attempts"`
-	Ipv6NdUnicastRa                                    types.Bool                                                                      `tfsdk:"ipv6_nd_unicast_ra"`
-	Ipv6NdSuppressRa                                   types.Bool                                                                      `tfsdk:"ipv6_nd_suppress_ra"`
-	Ipv6NdManagedConfigFlag                            types.Bool                                                                      `tfsdk:"ipv6_nd_managed_config_flag"`
-	Ipv6NdOtherConfigFlag                              types.Bool                                                                      `tfsdk:"ipv6_nd_other_config_flag"`
-	Ipv6NdNsInterval                                   types.Int64                                                                     `tfsdk:"ipv6_nd_ns_interval"`
-	Ipv6NdRaIntervalMax                                types.Int64                                                                     `tfsdk:"ipv6_nd_ra_interval_max"`
-	Ipv6NdRaIntervalMin                                types.Int64                                                                     `tfsdk:"ipv6_nd_ra_interval_min"`
-	Ipv6NdRaLifetime                                   types.Int64                                                                     `tfsdk:"ipv6_nd_ra_lifetime"`
-	Ipv6NdRedirects                                    types.Bool                                                                      `tfsdk:"ipv6_nd_redirects"`
-	Ipv6NdPrefixDefaultNoAdv                           types.Bool                                                                      `tfsdk:"ipv6_nd_prefix_default_no_adv"`
-	Ipv6NdPrefixDefaultNoAutoconfig                    types.Bool                                                                      `tfsdk:"ipv6_nd_prefix_default_no_autoconfig"`
-	EthernetCfmMepDomains                              []InterfaceBundleEtherSubinterfaceEthernetCfmMepDomains                         `tfsdk:"ethernet_cfm_mep_domains"`
-	EthernetCfmAisTransmissionUpInterval               types.String                                                                    `tfsdk:"ethernet_cfm_ais_transmission_up_interval"`
-	EthernetCfmAisTransmissionUpCos                    types.Int64                                                                     `tfsdk:"ethernet_cfm_ais_transmission_up_cos"`
-	EthernetCfmBandwidthNotificationsHoldOff           types.Int64                                                                     `tfsdk:"ethernet_cfm_bandwidth_notifications_hold_off"`
-	EthernetCfmBandwidthNotificationsWaitToRestore     types.Int64                                                                     `tfsdk:"ethernet_cfm_bandwidth_notifications_wait_to_restore"`
-	EthernetCfmBandwidthNotificationsLossThreshold     types.Int64                                                                     `tfsdk:"ethernet_cfm_bandwidth_notifications_loss_threshold"`
-	EthernetCfmBandwidthNotificationsLogChanges        types.Bool                                                                      `tfsdk:"ethernet_cfm_bandwidth_notifications_log_changes"`
-	FlowIpv4IngressMonitors                            []InterfaceBundleEtherSubinterfaceFlowIpv4IngressMonitors                       `tfsdk:"flow_ipv4_ingress_monitors"`
-	FlowIpv4IngressMonitorSamplers                     []InterfaceBundleEtherSubinterfaceFlowIpv4IngressMonitorSamplers                `tfsdk:"flow_ipv4_ingress_monitor_samplers"`
-	FlowIpv4EgressMonitors                             []InterfaceBundleEtherSubinterfaceFlowIpv4EgressMonitors                        `tfsdk:"flow_ipv4_egress_monitors"`
-	FlowIpv4EgressMonitorSamplers                      []InterfaceBundleEtherSubinterfaceFlowIpv4EgressMonitorSamplers                 `tfsdk:"flow_ipv4_egress_monitor_samplers"`
-	FlowIpv6IngressMonitors                            []InterfaceBundleEtherSubinterfaceFlowIpv6IngressMonitors                       `tfsdk:"flow_ipv6_ingress_monitors"`
-	FlowIpv6IngressMonitorSamplers                     []InterfaceBundleEtherSubinterfaceFlowIpv6IngressMonitorSamplers                `tfsdk:"flow_ipv6_ingress_monitor_samplers"`
-	FlowIpv6EgressMonitors                             []InterfaceBundleEtherSubinterfaceFlowIpv6EgressMonitors                        `tfsdk:"flow_ipv6_egress_monitors"`
-	FlowIpv6EgressMonitorSamplers                      []InterfaceBundleEtherSubinterfaceFlowIpv6EgressMonitorSamplers                 `tfsdk:"flow_ipv6_egress_monitor_samplers"`
-	ArpTimeout                                         types.Int64                                                                     `tfsdk:"arp_timeout"`
-	ArpLearningDisable                                 types.Bool                                                                      `tfsdk:"arp_learning_disable"`
-	ArpLearningLocal                                   types.Bool                                                                      `tfsdk:"arp_learning_local"`
-	ArpGratuitousIgnore                                types.Bool                                                                      `tfsdk:"arp_gratuitous_ignore"`
-	ArpCacheLimit                                      types.Int64                                                                     `tfsdk:"arp_cache_limit"`
-	ProxyArp                                           types.Bool                                                                      `tfsdk:"proxy_arp"`
-	MplsMtu                                            types.Int64                                                                     `tfsdk:"mpls_mtu"`
-	Lldp                                               types.Bool                                                                      `tfsdk:"lldp"`
-	LldpTransmitDisable                                types.Bool                                                                      `tfsdk:"lldp_transmit_disable"`
-	LldpReceiveDisable                                 types.Bool                                                                      `tfsdk:"lldp_receive_disable"`
-	MonitorSessions                                    []InterfaceBundleEtherSubinterfaceMonitorSessions                               `tfsdk:"monitor_sessions"`
-	Ptp                                                types.Bool                                                                      `tfsdk:"ptp"`
-	PtpProfile                                         types.String                                                                    `tfsdk:"ptp_profile"`
-	PtpTransportIpv4                                   types.Bool                                                                      `tfsdk:"ptp_transport_ipv4"`
-	PtpTransportEthernet                               types.Bool                                                                      `tfsdk:"ptp_transport_ethernet"`
-	PtpTransportIpv6                                   types.Bool                                                                      `tfsdk:"ptp_transport_ipv6"`
-	PtpClockOperationOneStep                           types.Bool                                                                      `tfsdk:"ptp_clock_operation_one_step"`
-	PtpClockOperationTwoStep                           types.Bool                                                                      `tfsdk:"ptp_clock_operation_two_step"`
-	PtpAnnounceInterval                                types.String                                                                    `tfsdk:"ptp_announce_interval"`
-	PtpAnnounceFrequency                               types.String                                                                    `tfsdk:"ptp_announce_frequency"`
-	PtpAnnounceTimeout                                 types.Int64                                                                     `tfsdk:"ptp_announce_timeout"`
-	PtpAnnounceGrantDuration                           types.Int64                                                                     `tfsdk:"ptp_announce_grant_duration"`
-	PtpSyncInterval                                    types.String                                                                    `tfsdk:"ptp_sync_interval"`
-	PtpSyncFrequency                                   types.String                                                                    `tfsdk:"ptp_sync_frequency"`
-	PtpSyncGrantDuration                               types.Int64                                                                     `tfsdk:"ptp_sync_grant_duration"`
-	PtpSyncTimeout                                     types.Int64                                                                     `tfsdk:"ptp_sync_timeout"`
-	PtpDelayRequestInterval                            types.String                                                                    `tfsdk:"ptp_delay_request_interval"`
-	PtpDelayRequestFrequency                           types.String                                                                    `tfsdk:"ptp_delay_request_frequency"`
-	PtpCos                                             types.Int64                                                                     `tfsdk:"ptp_cos"`
-	PtpCosEvent                                        types.Int64                                                                     `tfsdk:"ptp_cos_event"`
-	PtpCosGeneral                                      types.Int64                                                                     `tfsdk:"ptp_cos_general"`
-	PtpDscp                                            types.Int64                                                                     `tfsdk:"ptp_dscp"`
-	PtpDscpEvent                                       types.Int64                                                                     `tfsdk:"ptp_dscp_event"`
-	PtpDscpGeneral                                     types.Int64                                                                     `tfsdk:"ptp_dscp_general"`
-	PtpIpv4Ttl                                         types.Int64                                                                     `tfsdk:"ptp_ipv4_ttl"`
-	PtpIpv6HopLimit                                    types.Int64                                                                     `tfsdk:"ptp_ipv6_hop_limit"`
-	PtpDelayAsymmetryValue                             types.Int64                                                                     `tfsdk:"ptp_delay_asymmetry_value"`
-	PtpDelayAsymmetryUnitNanoseconds                   types.Bool                                                                      `tfsdk:"ptp_delay_asymmetry_unit_nanoseconds"`
-	PtpDelayAsymmetryUnitMicroseconds                  types.Bool                                                                      `tfsdk:"ptp_delay_asymmetry_unit_microseconds"`
-	PtpDelayAsymmetryUnitMilliseconds                  types.Bool                                                                      `tfsdk:"ptp_delay_asymmetry_unit_milliseconds"`
-	PtpDelayResponseGrantDuration                      types.Int64                                                                     `tfsdk:"ptp_delay_response_grant_duration"`
-	PtpDelayResponseTimeout                            types.Int64                                                                     `tfsdk:"ptp_delay_response_timeout"`
-	PtpUnicastGrantInvalidRequestReduce                types.Bool                                                                      `tfsdk:"ptp_unicast_grant_invalid_request_reduce"`
-	PtpUnicastGrantInvalidRequestDeny                  types.Bool                                                                      `tfsdk:"ptp_unicast_grant_invalid_request_deny"`
-	PtpMulticast                                       types.Bool                                                                      `tfsdk:"ptp_multicast"`
-	PtpMulticastMixed                                  types.Bool                                                                      `tfsdk:"ptp_multicast_mixed"`
-	PtpMulticastDisable                                types.Bool                                                                      `tfsdk:"ptp_multicast_disable"`
-	PtpMulticastTargetAddressMacForwardable            types.Bool                                                                      `tfsdk:"ptp_multicast_target_address_mac_forwardable"`
-	PtpMulticastTargetAddressMacNonForwardable         types.Bool                                                                      `tfsdk:"ptp_multicast_target_address_mac_non_forwardable"`
-	PtpPortStateSlaveOnly                              types.Bool                                                                      `tfsdk:"ptp_port_state_slave_only"`
-	PtpPortStateMasterOnly                             types.Bool                                                                      `tfsdk:"ptp_port_state_master_only"`
-	PtpPortStateAny                                    types.Bool                                                                      `tfsdk:"ptp_port_state_any"`
-	PtpSourceIpv4Address                               types.String                                                                    `tfsdk:"ptp_source_ipv4_address"`
-	PtpSourceIpv4AddressDisable                        types.Bool                                                                      `tfsdk:"ptp_source_ipv4_address_disable"`
-	PtpSourceIpv6Address                               types.String                                                                    `tfsdk:"ptp_source_ipv6_address"`
-	PtpSourceIpv6AddressDisable                        types.Bool                                                                      `tfsdk:"ptp_source_ipv6_address_disable"`
-	PtpLocalPriority                                   types.Int64                                                                     `tfsdk:"ptp_local_priority"`
-	PtpSlaveIpv4s                                      []InterfaceBundleEtherSubinterfacePtpSlaveIpv4s                                 `tfsdk:"ptp_slave_ipv4s"`
-	PtpSlaveIpv6s                                      []InterfaceBundleEtherSubinterfacePtpSlaveIpv6s                                 `tfsdk:"ptp_slave_ipv6s"`
-	PtpSlaveEthernets                                  []InterfaceBundleEtherSubinterfacePtpSlaveEthernets                             `tfsdk:"ptp_slave_ethernets"`
-	PtpMasterIpv4s                                     []InterfaceBundleEtherSubinterfacePtpMasterIpv4s                                `tfsdk:"ptp_master_ipv4s"`
-	PtpMasterIpv6s                                     []InterfaceBundleEtherSubinterfacePtpMasterIpv6s                                `tfsdk:"ptp_master_ipv6s"`
-	PtpMasterEthernets                                 []InterfaceBundleEtherSubinterfacePtpMasterEthernets                            `tfsdk:"ptp_master_ethernets"`
-	PtpInteropProfileDefault                           types.Bool                                                                      `tfsdk:"ptp_interop_profile_default"`
-	PtpInteropProfileG82651                            types.Bool                                                                      `tfsdk:"ptp_interop_profile_g_8265_1"`
-	PtpInteropProfileG82751                            types.Bool                                                                      `tfsdk:"ptp_interop_profile_g_8275_1"`
-	PtpInteropProfileG82752                            types.Bool                                                                      `tfsdk:"ptp_interop_profile_g_8275_2"`
-	PtpInteropDomain                                   types.Int64                                                                     `tfsdk:"ptp_interop_domain"`
-	PtpInteropEgressConversionPriority1                types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_priority1"`
-	PtpInteropEgressConversionPriority2                types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_priority2"`
-	PtpInteropEgressConversionClockAccuracy            types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_clock_accuracy"`
-	PtpInteropEgressConversionOffsetScaledLogVariance  types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_offset_scaled_log_variance"`
-	PtpInteropEgressConversionClockClassDefault        types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_clock_class_default"`
-	PtpInteropEgressConversionClockClassMappings       []InterfaceBundleEtherSubinterfacePtpInteropEgressConversionClockClassMappings  `tfsdk:"ptp_interop_egress_conversion_clock_class_mappings"`
-	PtpInteropIngressConversionPriority1               types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_priority1"`
-	PtpInteropIngressConversionPriority2               types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_priority2"`
-	PtpInteropIngressConversionClockAccuracy           types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_clock_accuracy"`
-	PtpInteropIngressConversionOffsetScaledLogVariance types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_offset_scaled_log_variance"`
-	PtpInteropIngressConversionClockClassDefault       types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_clock_class_default"`
-	PtpInteropIngressConversionClockClassMappings      []InterfaceBundleEtherSubinterfacePtpInteropIngressConversionClockClassMappings `tfsdk:"ptp_interop_ingress_conversion_clock_class_mappings"`
+	Device                                                          types.String                                                                    `tfsdk:"device"`
+	Id                                                              types.String                                                                    `tfsdk:"id"`
+	DeleteMode                                                      types.String                                                                    `tfsdk:"delete_mode"`
+	Name                                                            types.String                                                                    `tfsdk:"name"`
+	L2transport                                                     types.Bool                                                                      `tfsdk:"l2transport"`
+	PointToPoint                                                    types.Bool                                                                      `tfsdk:"point_to_point"`
+	Multipoint                                                      types.Bool                                                                      `tfsdk:"multipoint"`
+	Dampening                                                       types.Bool                                                                      `tfsdk:"dampening"`
+	DampeningDecayHalfLife                                          types.Int64                                                                     `tfsdk:"dampening_decay_half_life"`
+	DampeningReuseThreshold                                         types.Int64                                                                     `tfsdk:"dampening_reuse_threshold"`
+	DampeningSuppressThreshold                                      types.Int64                                                                     `tfsdk:"dampening_suppress_threshold"`
+	DampeningMaxSuppressTime                                        types.Int64                                                                     `tfsdk:"dampening_max_suppress_time"`
+	ServicePolicyInput                                              []InterfaceBundleEtherSubinterfaceServicePolicyInput                            `tfsdk:"service_policy_input"`
+	ServicePolicyOutput                                             []InterfaceBundleEtherSubinterfaceServicePolicyOutput                           `tfsdk:"service_policy_output"`
+	EncapsulationDot1qVlanId                                        types.Int64                                                                     `tfsdk:"encapsulation_dot1q_vlan_id"`
+	EncapsulationDot1qSecondDot1q                                   types.Int64                                                                     `tfsdk:"encapsulation_dot1q_second_dot1q"`
+	L2transportEncapsulationDot1q                                   types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1q"`
+	L2transportEncapsulationDot1qVlanId                             types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id"`
+	L2transportEncapsulationDot1qEndVlanId                          types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id"`
+	L2transportEncapsulationDot1qVlanId2                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_2"`
+	L2transportEncapsulationDot1qEndVlanId2                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_2"`
+	L2transportEncapsulationDot1qVlanId3                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_3"`
+	L2transportEncapsulationDot1qEndVlanId3                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_3"`
+	L2transportEncapsulationDot1qVlanId4                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_4"`
+	L2transportEncapsulationDot1qEndVlanId4                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_4"`
+	L2transportEncapsulationDot1qVlanId5                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_5"`
+	L2transportEncapsulationDot1qEndVlanId5                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_5"`
+	L2transportEncapsulationDot1qVlanId6                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_6"`
+	L2transportEncapsulationDot1qEndVlanId6                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_6"`
+	L2transportEncapsulationDot1qVlanId7                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_7"`
+	L2transportEncapsulationDot1qEndVlanId7                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_7"`
+	L2transportEncapsulationDot1qVlanId8                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_8"`
+	L2transportEncapsulationDot1qEndVlanId8                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_8"`
+	L2transportEncapsulationDot1qVlanId9                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_9"`
+	L2transportEncapsulationDot1qEndVlanId9                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_9"`
+	L2transportEncapsulationDot1qSecondDot1q                        types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_second_dot1q"`
+	L2transportEncapsulationDot1qSecondDot1qEndVlanId               types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_second_dot1q_end_vlan_id"`
+	L2transportEncapsulationDot1qExact                              types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1q_exact"`
+	L2transportEncapsulationDot1qIngressSourceMac                   types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_ingress_source_mac"`
+	L2transportEncapsulationDot1qPriorityTagged                     types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1q                types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId          types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId       types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId2         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_2"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId2      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_2"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId3         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_3"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId3      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_3"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId4         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_4"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId4      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_4"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId5         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_5"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId5      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_5"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId6         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_6"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId6      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_6"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId7         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_7"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId7      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_7"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId8         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_8"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId8      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_8"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId9         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_9"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId9      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_9"`
+	L2transportEncapsulationDot1qPriorityTaggedExact                types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_exact"`
+	L2transportEncapsulationDot1qPriorityTaggedIngressSourceMac     types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_ingress_source_mac"`
+	L2transportEncapsulationDot1ad                                  types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1ad"`
+	L2transportEncapsulationDot1adVlanId                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id"`
+	L2transportEncapsulationDot1adEndVlanId                         types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id"`
+	L2transportEncapsulationDot1adVlanId2                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_2"`
+	L2transportEncapsulationDot1adEndVlanId2                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_2"`
+	L2transportEncapsulationDot1adVlanId3                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_3"`
+	L2transportEncapsulationDot1adEndVlanId3                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_3"`
+	L2transportEncapsulationDot1adVlanId4                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_4"`
+	L2transportEncapsulationDot1adEndVlanId4                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_4"`
+	L2transportEncapsulationDot1adVlanId5                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_5"`
+	L2transportEncapsulationDot1adEndVlanId5                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_5"`
+	L2transportEncapsulationDot1adVlanId6                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_6"`
+	L2transportEncapsulationDot1adEndVlanId6                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_6"`
+	L2transportEncapsulationDot1adVlanId7                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_7"`
+	L2transportEncapsulationDot1adEndVlanId7                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_7"`
+	L2transportEncapsulationDot1adVlanId8                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_8"`
+	L2transportEncapsulationDot1adEndVlanId8                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_8"`
+	L2transportEncapsulationDot1adVlanId9                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_9"`
+	L2transportEncapsulationDot1adEndVlanId9                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_9"`
+	L2transportEncapsulationDot1adDot1q                             types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1ad_dot1q"`
+	L2transportEncapsulationDot1adDot1qEndVlanId                    types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1ad_dot1q_end_vlan_id"`
+	L2transportEncapsulationDot1adExact                             types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1ad_exact"`
+	L2transportEncapsulationDot1adIngressSourceMac                  types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1ad_ingress_source_mac"`
+	L2transportEncapsulationDot1adPriorityTagged                    types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1q               types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId         types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId2        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_2"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId2     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_2"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId3        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_3"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId3     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_3"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId4        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_4"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId4     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_4"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId5        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_5"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId5     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_5"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId6        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_6"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId6     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_6"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId7        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_7"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId7     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_7"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId8        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_8"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId8     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_8"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId9        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_9"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId9     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_9"`
+	L2transportEncapsulationDot1adPriorityTaggedExact               types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_exact"`
+	L2transportEncapsulationDot1adPriorityTaggedIngressSourceMac    types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_ingress_source_mac"`
+	L2transportEncapsulationUntagged                                types.Bool                                                                      `tfsdk:"l2transport_encapsulation_untagged"`
+	L2transportEncapsulationUntaggedDot1q                           types.Bool                                                                      `tfsdk:"l2transport_encapsulation_untagged_dot1q"`
+	L2transportEncapsulationUntaggedDot1qVlanId                     types.String                                                                    `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId                  types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id"`
+	L2transportEncapsulationUntaggedDot1qVlanId2                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_2"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId2                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_2"`
+	L2transportEncapsulationUntaggedDot1qVlanId3                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_3"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId3                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_3"`
+	L2transportEncapsulationUntaggedDot1qVlanId4                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_4"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId4                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_4"`
+	L2transportEncapsulationUntaggedDot1qVlanId5                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_5"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId5                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_5"`
+	L2transportEncapsulationUntaggedDot1qVlanId6                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_6"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId6                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_6"`
+	L2transportEncapsulationUntaggedDot1qVlanId7                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_7"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId7                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_7"`
+	L2transportEncapsulationUntaggedDot1qVlanId8                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_8"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId8                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_8"`
+	L2transportEncapsulationUntaggedDot1qVlanId9                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_9"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId9                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_9"`
+	L2transportEncapsulationUntaggedIngressSourceMac                types.String                                                                    `tfsdk:"l2transport_encapsulation_untagged_ingress_source_mac"`
+	L2transportEncapsulationDefault                                 types.Bool                                                                      `tfsdk:"l2transport_encapsulation_default"`
+	L2transportEncapsulationListExtendedDot1q                       types.Bool                                                                      `tfsdk:"l2transport_encapsulation_list_extended_dot1q"`
+	L2transportEncapsulationListExtendedDot1qVlanRanges             types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1q_vlan_ranges"`
+	L2transportEncapsulationListExtendedDot1qOuterCos               types.Int64                                                                     `tfsdk:"l2transport_encapsulation_list_extended_dot1q_outer_cos"`
+	L2transportEncapsulationListExtendedDot1qSecondDot1q            types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1q_second_dot1q"`
+	L2transportEncapsulationListExtendedDot1qInnerCos               types.Int64                                                                     `tfsdk:"l2transport_encapsulation_list_extended_dot1q_inner_cos"`
+	L2transportEncapsulationListExtendedDot1qExact                  types.Bool                                                                      `tfsdk:"l2transport_encapsulation_list_extended_dot1q_exact"`
+	L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe  types.Bool                                                                      `tfsdk:"l2transport_encapsulation_list_extended_dot1q_payload_ethertype_pppoe"`
+	L2transportEncapsulationListExtendedDot1qIngressSourceMac       types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1q_ingress_source_mac"`
+	L2transportEncapsulationListExtendedDot1qIngressDestinationMac  types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1q_ingress_destination_mac"`
+	L2transportEncapsulationListExtendedDot1ad                      types.Bool                                                                      `tfsdk:"l2transport_encapsulation_list_extended_dot1ad"`
+	L2transportEncapsulationListExtendedDot1adVlanRanges            types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_vlan_ranges"`
+	L2transportEncapsulationListExtendedDot1adOuterCos              types.Int64                                                                     `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_outer_cos"`
+	L2transportEncapsulationListExtendedDot1adDot1q                 types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_dot1q"`
+	L2transportEncapsulationListExtendedDot1adInnerCos              types.Int64                                                                     `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_inner_cos"`
+	L2transportEncapsulationListExtendedDot1adExact                 types.Bool                                                                      `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_exact"`
+	L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe types.Bool                                                                      `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_payload_ethertype_pppoe"`
+	L2transportEncapsulationListExtendedDot1adIngressSourceMac      types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_ingress_source_mac"`
+	L2transportEncapsulationListExtendedDot1adIngressDestinationMac types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_ingress_destination_mac"`
+	RewriteIngressTagPopOne                                         types.Bool                                                                      `tfsdk:"rewrite_ingress_tag_pop_one"`
+	RewriteIngressTagPopTwo                                         types.Bool                                                                      `tfsdk:"rewrite_ingress_tag_pop_two"`
+	Shutdown                                                        types.Bool                                                                      `tfsdk:"shutdown"`
+	Mtu                                                             types.Int64                                                                     `tfsdk:"mtu"`
+	LoggingEventsLinkStatus                                         types.Bool                                                                      `tfsdk:"logging_events_link_status"`
+	Bandwidth                                                       types.Int64                                                                     `tfsdk:"bandwidth"`
+	Description                                                     types.String                                                                    `tfsdk:"description"`
+	LoadInterval                                                    types.Int64                                                                     `tfsdk:"load_interval"`
+	Vrf                                                             types.String                                                                    `tfsdk:"vrf"`
+	Ipv4Address                                                     types.String                                                                    `tfsdk:"ipv4_address"`
+	Ipv4Netmask                                                     types.String                                                                    `tfsdk:"ipv4_netmask"`
+	Ipv4RouteTag                                                    types.Int64                                                                     `tfsdk:"ipv4_route_tag"`
+	Ipv4Algorithm                                                   types.Int64                                                                     `tfsdk:"ipv4_algorithm"`
+	Ipv4Secondaries                                                 []InterfaceBundleEtherSubinterfaceIpv4Secondaries                               `tfsdk:"ipv4_secondaries"`
+	Ipv4PointToPoint                                                types.Bool                                                                      `tfsdk:"ipv4_point_to_point"`
+	Ipv4Mtu                                                         types.Int64                                                                     `tfsdk:"ipv4_mtu"`
+	Ipv4Redirects                                                   types.Bool                                                                      `tfsdk:"ipv4_redirects"`
+	Ipv4MaskReply                                                   types.Bool                                                                      `tfsdk:"ipv4_mask_reply"`
+	Ipv4HelperAddresses                                             []InterfaceBundleEtherSubinterfaceIpv4HelperAddresses                           `tfsdk:"ipv4_helper_addresses"`
+	Ipv4UnreachablesDisable                                         types.Bool                                                                      `tfsdk:"ipv4_unreachables_disable"`
+	Ipv4TcpMssAdjust                                                types.Bool                                                                      `tfsdk:"ipv4_tcp_mss_adjust"`
+	Ipv4Unnumbered                                                  types.String                                                                    `tfsdk:"ipv4_unnumbered"`
+	Ipv4ForwardingEnable                                            types.Bool                                                                      `tfsdk:"ipv4_forwarding_enable"`
+	Ipv4TtlPropagateDisable                                         types.Bool                                                                      `tfsdk:"ipv4_ttl_propagate_disable"`
+	Ipv4VerifyUnicastSourceReachableViaType                         types.String                                                                    `tfsdk:"ipv4_verify_unicast_source_reachable_via_type"`
+	Ipv4VerifyUnicastSourceReachableViaAllowSelfPing                types.Bool                                                                      `tfsdk:"ipv4_verify_unicast_source_reachable_via_allow_self_ping"`
+	Ipv4VerifyUnicastSourceReachableViaAllowDefault                 types.Bool                                                                      `tfsdk:"ipv4_verify_unicast_source_reachable_via_allow_default"`
+	Ipv4AccessGroupIngressAcl1                                      types.String                                                                    `tfsdk:"ipv4_access_group_ingress_acl1"`
+	Ipv4AccessGroupIngressHardwareCount                             types.Bool                                                                      `tfsdk:"ipv4_access_group_ingress_hardware_count"`
+	Ipv4AccessGroupIngressInterfaceStatistics                       types.Bool                                                                      `tfsdk:"ipv4_access_group_ingress_interface_statistics"`
+	Ipv4AccessGroupIngressCompress                                  types.Int64                                                                     `tfsdk:"ipv4_access_group_ingress_compress"`
+	Ipv4AccessGroupEgressAcl                                        types.String                                                                    `tfsdk:"ipv4_access_group_egress_acl"`
+	Ipv4AccessGroupEgressHardwareCount                              types.Bool                                                                      `tfsdk:"ipv4_access_group_egress_hardware_count"`
+	Ipv4AccessGroupEgressInterfaceStatistics                        types.Bool                                                                      `tfsdk:"ipv4_access_group_egress_interface_statistics"`
+	Ipv4AccessGroupEgressCompress                                   types.Int64                                                                     `tfsdk:"ipv4_access_group_egress_compress"`
+	Ipv6VerifyUnicastSourceReachableViaType                         types.String                                                                    `tfsdk:"ipv6_verify_unicast_source_reachable_via_type"`
+	Ipv6VerifyUnicastSourceReachableViaAllowSelfPing                types.Bool                                                                      `tfsdk:"ipv6_verify_unicast_source_reachable_via_allow_self_ping"`
+	Ipv6VerifyUnicastSourceReachableViaAllowDefault                 types.Bool                                                                      `tfsdk:"ipv6_verify_unicast_source_reachable_via_allow_default"`
+	Ipv6AccessGroupIngressAcl1                                      types.String                                                                    `tfsdk:"ipv6_access_group_ingress_acl1"`
+	Ipv6AccessGroupIngressInterfaceStatistics                       types.Bool                                                                      `tfsdk:"ipv6_access_group_ingress_interface_statistics"`
+	Ipv6AccessGroupIngressCompress                                  types.Int64                                                                     `tfsdk:"ipv6_access_group_ingress_compress"`
+	Ipv6AccessGroupEgressAcl                                        types.String                                                                    `tfsdk:"ipv6_access_group_egress_acl"`
+	Ipv6AccessGroupEgressInterfaceStatistics                        types.Bool                                                                      `tfsdk:"ipv6_access_group_egress_interface_statistics"`
+	Ipv6AccessGroupEgressCompress                                   types.Int64                                                                     `tfsdk:"ipv6_access_group_egress_compress"`
+	Ipv6Enable                                                      types.Bool                                                                      `tfsdk:"ipv6_enable"`
+	Ipv6TtlPropagateDisable                                         types.Bool                                                                      `tfsdk:"ipv6_ttl_propagate_disable"`
+	Ipv6Addresses                                                   []InterfaceBundleEtherSubinterfaceIpv6Addresses                                 `tfsdk:"ipv6_addresses"`
+	Ipv6LinkLocalAddress                                            types.String                                                                    `tfsdk:"ipv6_link_local_address"`
+	Ipv6LinkLocalZone                                               types.String                                                                    `tfsdk:"ipv6_link_local_zone"`
+	Ipv6LinkLocalRouteTag                                           types.Int64                                                                     `tfsdk:"ipv6_link_local_route_tag"`
+	Ipv6Eui64Addresses                                              []InterfaceBundleEtherSubinterfaceIpv6Eui64Addresses                            `tfsdk:"ipv6_eui64_addresses"`
+	Ipv6Autoconfig                                                  types.Bool                                                                      `tfsdk:"ipv6_autoconfig"`
+	Ipv6Dhcp                                                        types.Bool                                                                      `tfsdk:"ipv6_dhcp"`
+	Ipv6Mtu                                                         types.Int64                                                                     `tfsdk:"ipv6_mtu"`
+	Ipv6UnreachablesDisable                                         types.Bool                                                                      `tfsdk:"ipv6_unreachables_disable"`
+	Ipv6TcpMssAdjust                                                types.Bool                                                                      `tfsdk:"ipv6_tcp_mss_adjust"`
+	Ipv6NdReachableTime                                             types.Int64                                                                     `tfsdk:"ipv6_nd_reachable_time"`
+	Ipv6NdCacheLimit                                                types.Int64                                                                     `tfsdk:"ipv6_nd_cache_limit"`
+	Ipv6NdDadAttempts                                               types.Int64                                                                     `tfsdk:"ipv6_nd_dad_attempts"`
+	Ipv6NdUnicastRa                                                 types.Bool                                                                      `tfsdk:"ipv6_nd_unicast_ra"`
+	Ipv6NdSuppressRa                                                types.Bool                                                                      `tfsdk:"ipv6_nd_suppress_ra"`
+	Ipv6NdManagedConfigFlag                                         types.Bool                                                                      `tfsdk:"ipv6_nd_managed_config_flag"`
+	Ipv6NdOtherConfigFlag                                           types.Bool                                                                      `tfsdk:"ipv6_nd_other_config_flag"`
+	Ipv6NdNsInterval                                                types.Int64                                                                     `tfsdk:"ipv6_nd_ns_interval"`
+	Ipv6NdRaIntervalMax                                             types.Int64                                                                     `tfsdk:"ipv6_nd_ra_interval_max"`
+	Ipv6NdRaIntervalMin                                             types.Int64                                                                     `tfsdk:"ipv6_nd_ra_interval_min"`
+	Ipv6NdRaLifetime                                                types.Int64                                                                     `tfsdk:"ipv6_nd_ra_lifetime"`
+	Ipv6NdRedirects                                                 types.Bool                                                                      `tfsdk:"ipv6_nd_redirects"`
+	Ipv6NdPrefixDefaultNoAdv                                        types.Bool                                                                      `tfsdk:"ipv6_nd_prefix_default_no_adv"`
+	Ipv6NdPrefixDefaultNoAutoconfig                                 types.Bool                                                                      `tfsdk:"ipv6_nd_prefix_default_no_autoconfig"`
+	EthernetCfmMepDomains                                           []InterfaceBundleEtherSubinterfaceEthernetCfmMepDomains                         `tfsdk:"ethernet_cfm_mep_domains"`
+	EthernetCfmAisTransmissionUpInterval                            types.String                                                                    `tfsdk:"ethernet_cfm_ais_transmission_up_interval"`
+	EthernetCfmAisTransmissionUpCos                                 types.Int64                                                                     `tfsdk:"ethernet_cfm_ais_transmission_up_cos"`
+	EthernetCfmBandwidthNotificationsHoldOff                        types.Int64                                                                     `tfsdk:"ethernet_cfm_bandwidth_notifications_hold_off"`
+	EthernetCfmBandwidthNotificationsWaitToRestore                  types.Int64                                                                     `tfsdk:"ethernet_cfm_bandwidth_notifications_wait_to_restore"`
+	EthernetCfmBandwidthNotificationsLossThreshold                  types.Int64                                                                     `tfsdk:"ethernet_cfm_bandwidth_notifications_loss_threshold"`
+	EthernetCfmBandwidthNotificationsLogChanges                     types.Bool                                                                      `tfsdk:"ethernet_cfm_bandwidth_notifications_log_changes"`
+	FlowIpv4IngressMonitors                                         []InterfaceBundleEtherSubinterfaceFlowIpv4IngressMonitors                       `tfsdk:"flow_ipv4_ingress_monitors"`
+	FlowIpv4IngressMonitorSamplers                                  []InterfaceBundleEtherSubinterfaceFlowIpv4IngressMonitorSamplers                `tfsdk:"flow_ipv4_ingress_monitor_samplers"`
+	FlowIpv4EgressMonitors                                          []InterfaceBundleEtherSubinterfaceFlowIpv4EgressMonitors                        `tfsdk:"flow_ipv4_egress_monitors"`
+	FlowIpv4EgressMonitorSamplers                                   []InterfaceBundleEtherSubinterfaceFlowIpv4EgressMonitorSamplers                 `tfsdk:"flow_ipv4_egress_monitor_samplers"`
+	FlowIpv6IngressMonitors                                         []InterfaceBundleEtherSubinterfaceFlowIpv6IngressMonitors                       `tfsdk:"flow_ipv6_ingress_monitors"`
+	FlowIpv6IngressMonitorSamplers                                  []InterfaceBundleEtherSubinterfaceFlowIpv6IngressMonitorSamplers                `tfsdk:"flow_ipv6_ingress_monitor_samplers"`
+	FlowIpv6EgressMonitors                                          []InterfaceBundleEtherSubinterfaceFlowIpv6EgressMonitors                        `tfsdk:"flow_ipv6_egress_monitors"`
+	FlowIpv6EgressMonitorSamplers                                   []InterfaceBundleEtherSubinterfaceFlowIpv6EgressMonitorSamplers                 `tfsdk:"flow_ipv6_egress_monitor_samplers"`
+	ArpTimeout                                                      types.Int64                                                                     `tfsdk:"arp_timeout"`
+	ArpLearningDisable                                              types.Bool                                                                      `tfsdk:"arp_learning_disable"`
+	ArpLearningLocal                                                types.Bool                                                                      `tfsdk:"arp_learning_local"`
+	ArpGratuitousIgnore                                             types.Bool                                                                      `tfsdk:"arp_gratuitous_ignore"`
+	ArpCacheLimit                                                   types.Int64                                                                     `tfsdk:"arp_cache_limit"`
+	ProxyArp                                                        types.Bool                                                                      `tfsdk:"proxy_arp"`
+	MplsMtu                                                         types.Int64                                                                     `tfsdk:"mpls_mtu"`
+	Lldp                                                            types.Bool                                                                      `tfsdk:"lldp"`
+	LldpTransmitDisable                                             types.Bool                                                                      `tfsdk:"lldp_transmit_disable"`
+	LldpReceiveDisable                                              types.Bool                                                                      `tfsdk:"lldp_receive_disable"`
+	MonitorSessions                                                 []InterfaceBundleEtherSubinterfaceMonitorSessions                               `tfsdk:"monitor_sessions"`
+	Ptp                                                             types.Bool                                                                      `tfsdk:"ptp"`
+	PtpProfile                                                      types.String                                                                    `tfsdk:"ptp_profile"`
+	PtpTransportIpv4                                                types.Bool                                                                      `tfsdk:"ptp_transport_ipv4"`
+	PtpTransportEthernet                                            types.Bool                                                                      `tfsdk:"ptp_transport_ethernet"`
+	PtpTransportIpv6                                                types.Bool                                                                      `tfsdk:"ptp_transport_ipv6"`
+	PtpClockOperationOneStep                                        types.Bool                                                                      `tfsdk:"ptp_clock_operation_one_step"`
+	PtpClockOperationTwoStep                                        types.Bool                                                                      `tfsdk:"ptp_clock_operation_two_step"`
+	PtpAnnounceInterval                                             types.String                                                                    `tfsdk:"ptp_announce_interval"`
+	PtpAnnounceFrequency                                            types.String                                                                    `tfsdk:"ptp_announce_frequency"`
+	PtpAnnounceTimeout                                              types.Int64                                                                     `tfsdk:"ptp_announce_timeout"`
+	PtpAnnounceGrantDuration                                        types.Int64                                                                     `tfsdk:"ptp_announce_grant_duration"`
+	PtpSyncInterval                                                 types.String                                                                    `tfsdk:"ptp_sync_interval"`
+	PtpSyncFrequency                                                types.String                                                                    `tfsdk:"ptp_sync_frequency"`
+	PtpSyncGrantDuration                                            types.Int64                                                                     `tfsdk:"ptp_sync_grant_duration"`
+	PtpSyncTimeout                                                  types.Int64                                                                     `tfsdk:"ptp_sync_timeout"`
+	PtpDelayRequestInterval                                         types.String                                                                    `tfsdk:"ptp_delay_request_interval"`
+	PtpDelayRequestFrequency                                        types.String                                                                    `tfsdk:"ptp_delay_request_frequency"`
+	PtpCos                                                          types.Int64                                                                     `tfsdk:"ptp_cos"`
+	PtpCosEvent                                                     types.Int64                                                                     `tfsdk:"ptp_cos_event"`
+	PtpCosGeneral                                                   types.Int64                                                                     `tfsdk:"ptp_cos_general"`
+	PtpDscp                                                         types.Int64                                                                     `tfsdk:"ptp_dscp"`
+	PtpDscpEvent                                                    types.Int64                                                                     `tfsdk:"ptp_dscp_event"`
+	PtpDscpGeneral                                                  types.Int64                                                                     `tfsdk:"ptp_dscp_general"`
+	PtpIpv4Ttl                                                      types.Int64                                                                     `tfsdk:"ptp_ipv4_ttl"`
+	PtpIpv6HopLimit                                                 types.Int64                                                                     `tfsdk:"ptp_ipv6_hop_limit"`
+	PtpDelayAsymmetryValue                                          types.Int64                                                                     `tfsdk:"ptp_delay_asymmetry_value"`
+	PtpDelayAsymmetryUnitNanoseconds                                types.Bool                                                                      `tfsdk:"ptp_delay_asymmetry_unit_nanoseconds"`
+	PtpDelayAsymmetryUnitMicroseconds                               types.Bool                                                                      `tfsdk:"ptp_delay_asymmetry_unit_microseconds"`
+	PtpDelayAsymmetryUnitMilliseconds                               types.Bool                                                                      `tfsdk:"ptp_delay_asymmetry_unit_milliseconds"`
+	PtpDelayResponseGrantDuration                                   types.Int64                                                                     `tfsdk:"ptp_delay_response_grant_duration"`
+	PtpDelayResponseTimeout                                         types.Int64                                                                     `tfsdk:"ptp_delay_response_timeout"`
+	PtpUnicastGrantInvalidRequestReduce                             types.Bool                                                                      `tfsdk:"ptp_unicast_grant_invalid_request_reduce"`
+	PtpUnicastGrantInvalidRequestDeny                               types.Bool                                                                      `tfsdk:"ptp_unicast_grant_invalid_request_deny"`
+	PtpMulticast                                                    types.Bool                                                                      `tfsdk:"ptp_multicast"`
+	PtpMulticastMixed                                               types.Bool                                                                      `tfsdk:"ptp_multicast_mixed"`
+	PtpMulticastDisable                                             types.Bool                                                                      `tfsdk:"ptp_multicast_disable"`
+	PtpMulticastTargetAddressMacForwardable                         types.Bool                                                                      `tfsdk:"ptp_multicast_target_address_mac_forwardable"`
+	PtpMulticastTargetAddressMacNonForwardable                      types.Bool                                                                      `tfsdk:"ptp_multicast_target_address_mac_non_forwardable"`
+	PtpPortStateSlaveOnly                                           types.Bool                                                                      `tfsdk:"ptp_port_state_slave_only"`
+	PtpPortStateMasterOnly                                          types.Bool                                                                      `tfsdk:"ptp_port_state_master_only"`
+	PtpPortStateAny                                                 types.Bool                                                                      `tfsdk:"ptp_port_state_any"`
+	PtpSourceIpv4Address                                            types.String                                                                    `tfsdk:"ptp_source_ipv4_address"`
+	PtpSourceIpv4AddressDisable                                     types.Bool                                                                      `tfsdk:"ptp_source_ipv4_address_disable"`
+	PtpSourceIpv6Address                                            types.String                                                                    `tfsdk:"ptp_source_ipv6_address"`
+	PtpSourceIpv6AddressDisable                                     types.Bool                                                                      `tfsdk:"ptp_source_ipv6_address_disable"`
+	PtpLocalPriority                                                types.Int64                                                                     `tfsdk:"ptp_local_priority"`
+	PtpSlaveIpv4s                                                   []InterfaceBundleEtherSubinterfacePtpSlaveIpv4s                                 `tfsdk:"ptp_slave_ipv4s"`
+	PtpSlaveIpv6s                                                   []InterfaceBundleEtherSubinterfacePtpSlaveIpv6s                                 `tfsdk:"ptp_slave_ipv6s"`
+	PtpSlaveEthernets                                               []InterfaceBundleEtherSubinterfacePtpSlaveEthernets                             `tfsdk:"ptp_slave_ethernets"`
+	PtpMasterIpv4s                                                  []InterfaceBundleEtherSubinterfacePtpMasterIpv4s                                `tfsdk:"ptp_master_ipv4s"`
+	PtpMasterIpv6s                                                  []InterfaceBundleEtherSubinterfacePtpMasterIpv6s                                `tfsdk:"ptp_master_ipv6s"`
+	PtpMasterEthernets                                              []InterfaceBundleEtherSubinterfacePtpMasterEthernets                            `tfsdk:"ptp_master_ethernets"`
+	PtpInteropProfileDefault                                        types.Bool                                                                      `tfsdk:"ptp_interop_profile_default"`
+	PtpInteropProfileG82651                                         types.Bool                                                                      `tfsdk:"ptp_interop_profile_g_8265_1"`
+	PtpInteropProfileG82751                                         types.Bool                                                                      `tfsdk:"ptp_interop_profile_g_8275_1"`
+	PtpInteropProfileG82752                                         types.Bool                                                                      `tfsdk:"ptp_interop_profile_g_8275_2"`
+	PtpInteropDomain                                                types.Int64                                                                     `tfsdk:"ptp_interop_domain"`
+	PtpInteropEgressConversionPriority1                             types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_priority1"`
+	PtpInteropEgressConversionPriority2                             types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_priority2"`
+	PtpInteropEgressConversionClockAccuracy                         types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_clock_accuracy"`
+	PtpInteropEgressConversionOffsetScaledLogVariance               types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_offset_scaled_log_variance"`
+	PtpInteropEgressConversionClockClassDefault                     types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_clock_class_default"`
+	PtpInteropEgressConversionClockClassMappings                    []InterfaceBundleEtherSubinterfacePtpInteropEgressConversionClockClassMappings  `tfsdk:"ptp_interop_egress_conversion_clock_class_mappings"`
+	PtpInteropIngressConversionPriority1                            types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_priority1"`
+	PtpInteropIngressConversionPriority2                            types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_priority2"`
+	PtpInteropIngressConversionClockAccuracy                        types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_clock_accuracy"`
+	PtpInteropIngressConversionOffsetScaledLogVariance              types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_offset_scaled_log_variance"`
+	PtpInteropIngressConversionClockClassDefault                    types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_clock_class_default"`
+	PtpInteropIngressConversionClockClassMappings                   []InterfaceBundleEtherSubinterfacePtpInteropIngressConversionClockClassMappings `tfsdk:"ptp_interop_ingress_conversion_clock_class_mappings"`
 }
 
 type InterfaceBundleEtherSubinterfaceData struct {
-	Device                                             types.String                                                                    `tfsdk:"device"`
-	Id                                                 types.String                                                                    `tfsdk:"id"`
-	Name                                               types.String                                                                    `tfsdk:"name"`
-	L2transport                                        types.Bool                                                                      `tfsdk:"l2transport"`
-	PointToPoint                                       types.Bool                                                                      `tfsdk:"point_to_point"`
-	Multipoint                                         types.Bool                                                                      `tfsdk:"multipoint"`
-	Dampening                                          types.Bool                                                                      `tfsdk:"dampening"`
-	DampeningDecayHalfLife                             types.Int64                                                                     `tfsdk:"dampening_decay_half_life"`
-	DampeningReuseThreshold                            types.Int64                                                                     `tfsdk:"dampening_reuse_threshold"`
-	DampeningSuppressThreshold                         types.Int64                                                                     `tfsdk:"dampening_suppress_threshold"`
-	DampeningMaxSuppressTime                           types.Int64                                                                     `tfsdk:"dampening_max_suppress_time"`
-	ServicePolicyInput                                 []InterfaceBundleEtherSubinterfaceServicePolicyInput                            `tfsdk:"service_policy_input"`
-	ServicePolicyOutput                                []InterfaceBundleEtherSubinterfaceServicePolicyOutput                           `tfsdk:"service_policy_output"`
-	EncapsulationDot1qVlanId                           types.Int64                                                                     `tfsdk:"encapsulation_dot1q_vlan_id"`
-	EncapsulationDot1qSecondDot1q                      types.Int64                                                                     `tfsdk:"encapsulation_dot1q_second_dot1q"`
-	L2transportEncapsulationDot1qVlanId                types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id"`
-	L2transportEncapsulationDot1qSecondDot1q           types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_second_dot1q"`
-	L2transportEncapsulationUntagged                   types.Bool                                                                      `tfsdk:"l2transport_encapsulation_untagged"`
-	RewriteIngressTagPopOne                            types.Bool                                                                      `tfsdk:"rewrite_ingress_tag_pop_one"`
-	RewriteIngressTagPopTwo                            types.Bool                                                                      `tfsdk:"rewrite_ingress_tag_pop_two"`
-	Shutdown                                           types.Bool                                                                      `tfsdk:"shutdown"`
-	Mtu                                                types.Int64                                                                     `tfsdk:"mtu"`
-	LoggingEventsLinkStatus                            types.Bool                                                                      `tfsdk:"logging_events_link_status"`
-	Bandwidth                                          types.Int64                                                                     `tfsdk:"bandwidth"`
-	Description                                        types.String                                                                    `tfsdk:"description"`
-	LoadInterval                                       types.Int64                                                                     `tfsdk:"load_interval"`
-	Vrf                                                types.String                                                                    `tfsdk:"vrf"`
-	Ipv4Address                                        types.String                                                                    `tfsdk:"ipv4_address"`
-	Ipv4Netmask                                        types.String                                                                    `tfsdk:"ipv4_netmask"`
-	Ipv4RouteTag                                       types.Int64                                                                     `tfsdk:"ipv4_route_tag"`
-	Ipv4Algorithm                                      types.Int64                                                                     `tfsdk:"ipv4_algorithm"`
-	Ipv4Secondaries                                    []InterfaceBundleEtherSubinterfaceIpv4Secondaries                               `tfsdk:"ipv4_secondaries"`
-	Ipv4PointToPoint                                   types.Bool                                                                      `tfsdk:"ipv4_point_to_point"`
-	Ipv4Mtu                                            types.Int64                                                                     `tfsdk:"ipv4_mtu"`
-	Ipv4Redirects                                      types.Bool                                                                      `tfsdk:"ipv4_redirects"`
-	Ipv4MaskReply                                      types.Bool                                                                      `tfsdk:"ipv4_mask_reply"`
-	Ipv4HelperAddresses                                []InterfaceBundleEtherSubinterfaceIpv4HelperAddresses                           `tfsdk:"ipv4_helper_addresses"`
-	Ipv4UnreachablesDisable                            types.Bool                                                                      `tfsdk:"ipv4_unreachables_disable"`
-	Ipv4TcpMssAdjust                                   types.Bool                                                                      `tfsdk:"ipv4_tcp_mss_adjust"`
-	Ipv4Unnumbered                                     types.String                                                                    `tfsdk:"ipv4_unnumbered"`
-	Ipv4ForwardingEnable                               types.Bool                                                                      `tfsdk:"ipv4_forwarding_enable"`
-	Ipv4TtlPropagateDisable                            types.Bool                                                                      `tfsdk:"ipv4_ttl_propagate_disable"`
-	Ipv4VerifyUnicastSourceReachableViaType            types.String                                                                    `tfsdk:"ipv4_verify_unicast_source_reachable_via_type"`
-	Ipv4VerifyUnicastSourceReachableViaAllowSelfPing   types.Bool                                                                      `tfsdk:"ipv4_verify_unicast_source_reachable_via_allow_self_ping"`
-	Ipv4VerifyUnicastSourceReachableViaAllowDefault    types.Bool                                                                      `tfsdk:"ipv4_verify_unicast_source_reachable_via_allow_default"`
-	Ipv4AccessGroupIngressAcl1                         types.String                                                                    `tfsdk:"ipv4_access_group_ingress_acl1"`
-	Ipv4AccessGroupIngressHardwareCount                types.Bool                                                                      `tfsdk:"ipv4_access_group_ingress_hardware_count"`
-	Ipv4AccessGroupIngressInterfaceStatistics          types.Bool                                                                      `tfsdk:"ipv4_access_group_ingress_interface_statistics"`
-	Ipv4AccessGroupIngressCompress                     types.Int64                                                                     `tfsdk:"ipv4_access_group_ingress_compress"`
-	Ipv4AccessGroupEgressAcl                           types.String                                                                    `tfsdk:"ipv4_access_group_egress_acl"`
-	Ipv4AccessGroupEgressHardwareCount                 types.Bool                                                                      `tfsdk:"ipv4_access_group_egress_hardware_count"`
-	Ipv4AccessGroupEgressInterfaceStatistics           types.Bool                                                                      `tfsdk:"ipv4_access_group_egress_interface_statistics"`
-	Ipv4AccessGroupEgressCompress                      types.Int64                                                                     `tfsdk:"ipv4_access_group_egress_compress"`
-	Ipv6VerifyUnicastSourceReachableViaType            types.String                                                                    `tfsdk:"ipv6_verify_unicast_source_reachable_via_type"`
-	Ipv6VerifyUnicastSourceReachableViaAllowSelfPing   types.Bool                                                                      `tfsdk:"ipv6_verify_unicast_source_reachable_via_allow_self_ping"`
-	Ipv6VerifyUnicastSourceReachableViaAllowDefault    types.Bool                                                                      `tfsdk:"ipv6_verify_unicast_source_reachable_via_allow_default"`
-	Ipv6AccessGroupIngressAcl1                         types.String                                                                    `tfsdk:"ipv6_access_group_ingress_acl1"`
-	Ipv6AccessGroupIngressInterfaceStatistics          types.Bool                                                                      `tfsdk:"ipv6_access_group_ingress_interface_statistics"`
-	Ipv6AccessGroupIngressCompress                     types.Int64                                                                     `tfsdk:"ipv6_access_group_ingress_compress"`
-	Ipv6AccessGroupEgressAcl                           types.String                                                                    `tfsdk:"ipv6_access_group_egress_acl"`
-	Ipv6AccessGroupEgressInterfaceStatistics           types.Bool                                                                      `tfsdk:"ipv6_access_group_egress_interface_statistics"`
-	Ipv6AccessGroupEgressCompress                      types.Int64                                                                     `tfsdk:"ipv6_access_group_egress_compress"`
-	Ipv6Enable                                         types.Bool                                                                      `tfsdk:"ipv6_enable"`
-	Ipv6TtlPropagateDisable                            types.Bool                                                                      `tfsdk:"ipv6_ttl_propagate_disable"`
-	Ipv6Addresses                                      []InterfaceBundleEtherSubinterfaceIpv6Addresses                                 `tfsdk:"ipv6_addresses"`
-	Ipv6LinkLocalAddress                               types.String                                                                    `tfsdk:"ipv6_link_local_address"`
-	Ipv6LinkLocalZone                                  types.String                                                                    `tfsdk:"ipv6_link_local_zone"`
-	Ipv6LinkLocalRouteTag                              types.Int64                                                                     `tfsdk:"ipv6_link_local_route_tag"`
-	Ipv6Eui64Addresses                                 []InterfaceBundleEtherSubinterfaceIpv6Eui64Addresses                            `tfsdk:"ipv6_eui64_addresses"`
-	Ipv6Autoconfig                                     types.Bool                                                                      `tfsdk:"ipv6_autoconfig"`
-	Ipv6Dhcp                                           types.Bool                                                                      `tfsdk:"ipv6_dhcp"`
-	Ipv6Mtu                                            types.Int64                                                                     `tfsdk:"ipv6_mtu"`
-	Ipv6UnreachablesDisable                            types.Bool                                                                      `tfsdk:"ipv6_unreachables_disable"`
-	Ipv6TcpMssAdjust                                   types.Bool                                                                      `tfsdk:"ipv6_tcp_mss_adjust"`
-	Ipv6NdReachableTime                                types.Int64                                                                     `tfsdk:"ipv6_nd_reachable_time"`
-	Ipv6NdCacheLimit                                   types.Int64                                                                     `tfsdk:"ipv6_nd_cache_limit"`
-	Ipv6NdDadAttempts                                  types.Int64                                                                     `tfsdk:"ipv6_nd_dad_attempts"`
-	Ipv6NdUnicastRa                                    types.Bool                                                                      `tfsdk:"ipv6_nd_unicast_ra"`
-	Ipv6NdSuppressRa                                   types.Bool                                                                      `tfsdk:"ipv6_nd_suppress_ra"`
-	Ipv6NdManagedConfigFlag                            types.Bool                                                                      `tfsdk:"ipv6_nd_managed_config_flag"`
-	Ipv6NdOtherConfigFlag                              types.Bool                                                                      `tfsdk:"ipv6_nd_other_config_flag"`
-	Ipv6NdNsInterval                                   types.Int64                                                                     `tfsdk:"ipv6_nd_ns_interval"`
-	Ipv6NdRaIntervalMax                                types.Int64                                                                     `tfsdk:"ipv6_nd_ra_interval_max"`
-	Ipv6NdRaIntervalMin                                types.Int64                                                                     `tfsdk:"ipv6_nd_ra_interval_min"`
-	Ipv6NdRaLifetime                                   types.Int64                                                                     `tfsdk:"ipv6_nd_ra_lifetime"`
-	Ipv6NdRedirects                                    types.Bool                                                                      `tfsdk:"ipv6_nd_redirects"`
-	Ipv6NdPrefixDefaultNoAdv                           types.Bool                                                                      `tfsdk:"ipv6_nd_prefix_default_no_adv"`
-	Ipv6NdPrefixDefaultNoAutoconfig                    types.Bool                                                                      `tfsdk:"ipv6_nd_prefix_default_no_autoconfig"`
-	EthernetCfmMepDomains                              []InterfaceBundleEtherSubinterfaceEthernetCfmMepDomains                         `tfsdk:"ethernet_cfm_mep_domains"`
-	EthernetCfmAisTransmissionUpInterval               types.String                                                                    `tfsdk:"ethernet_cfm_ais_transmission_up_interval"`
-	EthernetCfmAisTransmissionUpCos                    types.Int64                                                                     `tfsdk:"ethernet_cfm_ais_transmission_up_cos"`
-	EthernetCfmBandwidthNotificationsHoldOff           types.Int64                                                                     `tfsdk:"ethernet_cfm_bandwidth_notifications_hold_off"`
-	EthernetCfmBandwidthNotificationsWaitToRestore     types.Int64                                                                     `tfsdk:"ethernet_cfm_bandwidth_notifications_wait_to_restore"`
-	EthernetCfmBandwidthNotificationsLossThreshold     types.Int64                                                                     `tfsdk:"ethernet_cfm_bandwidth_notifications_loss_threshold"`
-	EthernetCfmBandwidthNotificationsLogChanges        types.Bool                                                                      `tfsdk:"ethernet_cfm_bandwidth_notifications_log_changes"`
-	FlowIpv4IngressMonitors                            []InterfaceBundleEtherSubinterfaceFlowIpv4IngressMonitors                       `tfsdk:"flow_ipv4_ingress_monitors"`
-	FlowIpv4IngressMonitorSamplers                     []InterfaceBundleEtherSubinterfaceFlowIpv4IngressMonitorSamplers                `tfsdk:"flow_ipv4_ingress_monitor_samplers"`
-	FlowIpv4EgressMonitors                             []InterfaceBundleEtherSubinterfaceFlowIpv4EgressMonitors                        `tfsdk:"flow_ipv4_egress_monitors"`
-	FlowIpv4EgressMonitorSamplers                      []InterfaceBundleEtherSubinterfaceFlowIpv4EgressMonitorSamplers                 `tfsdk:"flow_ipv4_egress_monitor_samplers"`
-	FlowIpv6IngressMonitors                            []InterfaceBundleEtherSubinterfaceFlowIpv6IngressMonitors                       `tfsdk:"flow_ipv6_ingress_monitors"`
-	FlowIpv6IngressMonitorSamplers                     []InterfaceBundleEtherSubinterfaceFlowIpv6IngressMonitorSamplers                `tfsdk:"flow_ipv6_ingress_monitor_samplers"`
-	FlowIpv6EgressMonitors                             []InterfaceBundleEtherSubinterfaceFlowIpv6EgressMonitors                        `tfsdk:"flow_ipv6_egress_monitors"`
-	FlowIpv6EgressMonitorSamplers                      []InterfaceBundleEtherSubinterfaceFlowIpv6EgressMonitorSamplers                 `tfsdk:"flow_ipv6_egress_monitor_samplers"`
-	ArpTimeout                                         types.Int64                                                                     `tfsdk:"arp_timeout"`
-	ArpLearningDisable                                 types.Bool                                                                      `tfsdk:"arp_learning_disable"`
-	ArpLearningLocal                                   types.Bool                                                                      `tfsdk:"arp_learning_local"`
-	ArpGratuitousIgnore                                types.Bool                                                                      `tfsdk:"arp_gratuitous_ignore"`
-	ArpCacheLimit                                      types.Int64                                                                     `tfsdk:"arp_cache_limit"`
-	ProxyArp                                           types.Bool                                                                      `tfsdk:"proxy_arp"`
-	MplsMtu                                            types.Int64                                                                     `tfsdk:"mpls_mtu"`
-	Lldp                                               types.Bool                                                                      `tfsdk:"lldp"`
-	LldpTransmitDisable                                types.Bool                                                                      `tfsdk:"lldp_transmit_disable"`
-	LldpReceiveDisable                                 types.Bool                                                                      `tfsdk:"lldp_receive_disable"`
-	MonitorSessions                                    []InterfaceBundleEtherSubinterfaceMonitorSessions                               `tfsdk:"monitor_sessions"`
-	Ptp                                                types.Bool                                                                      `tfsdk:"ptp"`
-	PtpProfile                                         types.String                                                                    `tfsdk:"ptp_profile"`
-	PtpTransportIpv4                                   types.Bool                                                                      `tfsdk:"ptp_transport_ipv4"`
-	PtpTransportEthernet                               types.Bool                                                                      `tfsdk:"ptp_transport_ethernet"`
-	PtpTransportIpv6                                   types.Bool                                                                      `tfsdk:"ptp_transport_ipv6"`
-	PtpClockOperationOneStep                           types.Bool                                                                      `tfsdk:"ptp_clock_operation_one_step"`
-	PtpClockOperationTwoStep                           types.Bool                                                                      `tfsdk:"ptp_clock_operation_two_step"`
-	PtpAnnounceInterval                                types.String                                                                    `tfsdk:"ptp_announce_interval"`
-	PtpAnnounceFrequency                               types.String                                                                    `tfsdk:"ptp_announce_frequency"`
-	PtpAnnounceTimeout                                 types.Int64                                                                     `tfsdk:"ptp_announce_timeout"`
-	PtpAnnounceGrantDuration                           types.Int64                                                                     `tfsdk:"ptp_announce_grant_duration"`
-	PtpSyncInterval                                    types.String                                                                    `tfsdk:"ptp_sync_interval"`
-	PtpSyncFrequency                                   types.String                                                                    `tfsdk:"ptp_sync_frequency"`
-	PtpSyncGrantDuration                               types.Int64                                                                     `tfsdk:"ptp_sync_grant_duration"`
-	PtpSyncTimeout                                     types.Int64                                                                     `tfsdk:"ptp_sync_timeout"`
-	PtpDelayRequestInterval                            types.String                                                                    `tfsdk:"ptp_delay_request_interval"`
-	PtpDelayRequestFrequency                           types.String                                                                    `tfsdk:"ptp_delay_request_frequency"`
-	PtpCos                                             types.Int64                                                                     `tfsdk:"ptp_cos"`
-	PtpCosEvent                                        types.Int64                                                                     `tfsdk:"ptp_cos_event"`
-	PtpCosGeneral                                      types.Int64                                                                     `tfsdk:"ptp_cos_general"`
-	PtpDscp                                            types.Int64                                                                     `tfsdk:"ptp_dscp"`
-	PtpDscpEvent                                       types.Int64                                                                     `tfsdk:"ptp_dscp_event"`
-	PtpDscpGeneral                                     types.Int64                                                                     `tfsdk:"ptp_dscp_general"`
-	PtpIpv4Ttl                                         types.Int64                                                                     `tfsdk:"ptp_ipv4_ttl"`
-	PtpIpv6HopLimit                                    types.Int64                                                                     `tfsdk:"ptp_ipv6_hop_limit"`
-	PtpDelayAsymmetryValue                             types.Int64                                                                     `tfsdk:"ptp_delay_asymmetry_value"`
-	PtpDelayAsymmetryUnitNanoseconds                   types.Bool                                                                      `tfsdk:"ptp_delay_asymmetry_unit_nanoseconds"`
-	PtpDelayAsymmetryUnitMicroseconds                  types.Bool                                                                      `tfsdk:"ptp_delay_asymmetry_unit_microseconds"`
-	PtpDelayAsymmetryUnitMilliseconds                  types.Bool                                                                      `tfsdk:"ptp_delay_asymmetry_unit_milliseconds"`
-	PtpDelayResponseGrantDuration                      types.Int64                                                                     `tfsdk:"ptp_delay_response_grant_duration"`
-	PtpDelayResponseTimeout                            types.Int64                                                                     `tfsdk:"ptp_delay_response_timeout"`
-	PtpUnicastGrantInvalidRequestReduce                types.Bool                                                                      `tfsdk:"ptp_unicast_grant_invalid_request_reduce"`
-	PtpUnicastGrantInvalidRequestDeny                  types.Bool                                                                      `tfsdk:"ptp_unicast_grant_invalid_request_deny"`
-	PtpMulticast                                       types.Bool                                                                      `tfsdk:"ptp_multicast"`
-	PtpMulticastMixed                                  types.Bool                                                                      `tfsdk:"ptp_multicast_mixed"`
-	PtpMulticastDisable                                types.Bool                                                                      `tfsdk:"ptp_multicast_disable"`
-	PtpMulticastTargetAddressMacForwardable            types.Bool                                                                      `tfsdk:"ptp_multicast_target_address_mac_forwardable"`
-	PtpMulticastTargetAddressMacNonForwardable         types.Bool                                                                      `tfsdk:"ptp_multicast_target_address_mac_non_forwardable"`
-	PtpPortStateSlaveOnly                              types.Bool                                                                      `tfsdk:"ptp_port_state_slave_only"`
-	PtpPortStateMasterOnly                             types.Bool                                                                      `tfsdk:"ptp_port_state_master_only"`
-	PtpPortStateAny                                    types.Bool                                                                      `tfsdk:"ptp_port_state_any"`
-	PtpSourceIpv4Address                               types.String                                                                    `tfsdk:"ptp_source_ipv4_address"`
-	PtpSourceIpv4AddressDisable                        types.Bool                                                                      `tfsdk:"ptp_source_ipv4_address_disable"`
-	PtpSourceIpv6Address                               types.String                                                                    `tfsdk:"ptp_source_ipv6_address"`
-	PtpSourceIpv6AddressDisable                        types.Bool                                                                      `tfsdk:"ptp_source_ipv6_address_disable"`
-	PtpLocalPriority                                   types.Int64                                                                     `tfsdk:"ptp_local_priority"`
-	PtpSlaveIpv4s                                      []InterfaceBundleEtherSubinterfacePtpSlaveIpv4s                                 `tfsdk:"ptp_slave_ipv4s"`
-	PtpSlaveIpv6s                                      []InterfaceBundleEtherSubinterfacePtpSlaveIpv6s                                 `tfsdk:"ptp_slave_ipv6s"`
-	PtpSlaveEthernets                                  []InterfaceBundleEtherSubinterfacePtpSlaveEthernets                             `tfsdk:"ptp_slave_ethernets"`
-	PtpMasterIpv4s                                     []InterfaceBundleEtherSubinterfacePtpMasterIpv4s                                `tfsdk:"ptp_master_ipv4s"`
-	PtpMasterIpv6s                                     []InterfaceBundleEtherSubinterfacePtpMasterIpv6s                                `tfsdk:"ptp_master_ipv6s"`
-	PtpMasterEthernets                                 []InterfaceBundleEtherSubinterfacePtpMasterEthernets                            `tfsdk:"ptp_master_ethernets"`
-	PtpInteropProfileDefault                           types.Bool                                                                      `tfsdk:"ptp_interop_profile_default"`
-	PtpInteropProfileG82651                            types.Bool                                                                      `tfsdk:"ptp_interop_profile_g_8265_1"`
-	PtpInteropProfileG82751                            types.Bool                                                                      `tfsdk:"ptp_interop_profile_g_8275_1"`
-	PtpInteropProfileG82752                            types.Bool                                                                      `tfsdk:"ptp_interop_profile_g_8275_2"`
-	PtpInteropDomain                                   types.Int64                                                                     `tfsdk:"ptp_interop_domain"`
-	PtpInteropEgressConversionPriority1                types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_priority1"`
-	PtpInteropEgressConversionPriority2                types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_priority2"`
-	PtpInteropEgressConversionClockAccuracy            types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_clock_accuracy"`
-	PtpInteropEgressConversionOffsetScaledLogVariance  types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_offset_scaled_log_variance"`
-	PtpInteropEgressConversionClockClassDefault        types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_clock_class_default"`
-	PtpInteropEgressConversionClockClassMappings       []InterfaceBundleEtherSubinterfacePtpInteropEgressConversionClockClassMappings  `tfsdk:"ptp_interop_egress_conversion_clock_class_mappings"`
-	PtpInteropIngressConversionPriority1               types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_priority1"`
-	PtpInteropIngressConversionPriority2               types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_priority2"`
-	PtpInteropIngressConversionClockAccuracy           types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_clock_accuracy"`
-	PtpInteropIngressConversionOffsetScaledLogVariance types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_offset_scaled_log_variance"`
-	PtpInteropIngressConversionClockClassDefault       types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_clock_class_default"`
-	PtpInteropIngressConversionClockClassMappings      []InterfaceBundleEtherSubinterfacePtpInteropIngressConversionClockClassMappings `tfsdk:"ptp_interop_ingress_conversion_clock_class_mappings"`
+	Device                                                          types.String                                                                    `tfsdk:"device"`
+	Id                                                              types.String                                                                    `tfsdk:"id"`
+	Name                                                            types.String                                                                    `tfsdk:"name"`
+	L2transport                                                     types.Bool                                                                      `tfsdk:"l2transport"`
+	PointToPoint                                                    types.Bool                                                                      `tfsdk:"point_to_point"`
+	Multipoint                                                      types.Bool                                                                      `tfsdk:"multipoint"`
+	Dampening                                                       types.Bool                                                                      `tfsdk:"dampening"`
+	DampeningDecayHalfLife                                          types.Int64                                                                     `tfsdk:"dampening_decay_half_life"`
+	DampeningReuseThreshold                                         types.Int64                                                                     `tfsdk:"dampening_reuse_threshold"`
+	DampeningSuppressThreshold                                      types.Int64                                                                     `tfsdk:"dampening_suppress_threshold"`
+	DampeningMaxSuppressTime                                        types.Int64                                                                     `tfsdk:"dampening_max_suppress_time"`
+	ServicePolicyInput                                              []InterfaceBundleEtherSubinterfaceServicePolicyInput                            `tfsdk:"service_policy_input"`
+	ServicePolicyOutput                                             []InterfaceBundleEtherSubinterfaceServicePolicyOutput                           `tfsdk:"service_policy_output"`
+	EncapsulationDot1qVlanId                                        types.Int64                                                                     `tfsdk:"encapsulation_dot1q_vlan_id"`
+	EncapsulationDot1qSecondDot1q                                   types.Int64                                                                     `tfsdk:"encapsulation_dot1q_second_dot1q"`
+	L2transportEncapsulationDot1q                                   types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1q"`
+	L2transportEncapsulationDot1qVlanId                             types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id"`
+	L2transportEncapsulationDot1qEndVlanId                          types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id"`
+	L2transportEncapsulationDot1qVlanId2                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_2"`
+	L2transportEncapsulationDot1qEndVlanId2                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_2"`
+	L2transportEncapsulationDot1qVlanId3                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_3"`
+	L2transportEncapsulationDot1qEndVlanId3                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_3"`
+	L2transportEncapsulationDot1qVlanId4                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_4"`
+	L2transportEncapsulationDot1qEndVlanId4                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_4"`
+	L2transportEncapsulationDot1qVlanId5                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_5"`
+	L2transportEncapsulationDot1qEndVlanId5                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_5"`
+	L2transportEncapsulationDot1qVlanId6                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_6"`
+	L2transportEncapsulationDot1qEndVlanId6                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_6"`
+	L2transportEncapsulationDot1qVlanId7                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_7"`
+	L2transportEncapsulationDot1qEndVlanId7                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_7"`
+	L2transportEncapsulationDot1qVlanId8                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_8"`
+	L2transportEncapsulationDot1qEndVlanId8                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_8"`
+	L2transportEncapsulationDot1qVlanId9                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_vlan_id_9"`
+	L2transportEncapsulationDot1qEndVlanId9                         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_end_vlan_id_9"`
+	L2transportEncapsulationDot1qSecondDot1q                        types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_second_dot1q"`
+	L2transportEncapsulationDot1qSecondDot1qEndVlanId               types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_second_dot1q_end_vlan_id"`
+	L2transportEncapsulationDot1qExact                              types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1q_exact"`
+	L2transportEncapsulationDot1qIngressSourceMac                   types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_ingress_source_mac"`
+	L2transportEncapsulationDot1qPriorityTagged                     types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1q                types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId          types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId       types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId2         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_2"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId2      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_2"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId3         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_3"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId3      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_3"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId4         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_4"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId4      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_4"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId5         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_5"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId5      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_5"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId6         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_6"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId6      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_6"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId7         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_7"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId7      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_7"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId8         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_8"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId8      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_8"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId9         types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_vlan_id_9"`
+	L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId9      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_dot1q_end_vlan_id_9"`
+	L2transportEncapsulationDot1qPriorityTaggedExact                types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_exact"`
+	L2transportEncapsulationDot1qPriorityTaggedIngressSourceMac     types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1q_priority_tagged_ingress_source_mac"`
+	L2transportEncapsulationDot1ad                                  types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1ad"`
+	L2transportEncapsulationDot1adVlanId                            types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id"`
+	L2transportEncapsulationDot1adEndVlanId                         types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id"`
+	L2transportEncapsulationDot1adVlanId2                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_2"`
+	L2transportEncapsulationDot1adEndVlanId2                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_2"`
+	L2transportEncapsulationDot1adVlanId3                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_3"`
+	L2transportEncapsulationDot1adEndVlanId3                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_3"`
+	L2transportEncapsulationDot1adVlanId4                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_4"`
+	L2transportEncapsulationDot1adEndVlanId4                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_4"`
+	L2transportEncapsulationDot1adVlanId5                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_5"`
+	L2transportEncapsulationDot1adEndVlanId5                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_5"`
+	L2transportEncapsulationDot1adVlanId6                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_6"`
+	L2transportEncapsulationDot1adEndVlanId6                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_6"`
+	L2transportEncapsulationDot1adVlanId7                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_7"`
+	L2transportEncapsulationDot1adEndVlanId7                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_7"`
+	L2transportEncapsulationDot1adVlanId8                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_8"`
+	L2transportEncapsulationDot1adEndVlanId8                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_8"`
+	L2transportEncapsulationDot1adVlanId9                           types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_vlan_id_9"`
+	L2transportEncapsulationDot1adEndVlanId9                        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_end_vlan_id_9"`
+	L2transportEncapsulationDot1adDot1q                             types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1ad_dot1q"`
+	L2transportEncapsulationDot1adDot1qEndVlanId                    types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1ad_dot1q_end_vlan_id"`
+	L2transportEncapsulationDot1adExact                             types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1ad_exact"`
+	L2transportEncapsulationDot1adIngressSourceMac                  types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1ad_ingress_source_mac"`
+	L2transportEncapsulationDot1adPriorityTagged                    types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1q               types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId         types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId      types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId2        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_2"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId2     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_2"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId3        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_3"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId3     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_3"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId4        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_4"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId4     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_4"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId5        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_5"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId5     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_5"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId6        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_6"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId6     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_6"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId7        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_7"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId7     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_7"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId8        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_8"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId8     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_8"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId9        types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_vlan_id_9"`
+	L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId9     types.Int64                                                                     `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_dot1q_end_vlan_id_9"`
+	L2transportEncapsulationDot1adPriorityTaggedExact               types.Bool                                                                      `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_exact"`
+	L2transportEncapsulationDot1adPriorityTaggedIngressSourceMac    types.String                                                                    `tfsdk:"l2transport_encapsulation_dot1ad_priority_tagged_ingress_source_mac"`
+	L2transportEncapsulationUntagged                                types.Bool                                                                      `tfsdk:"l2transport_encapsulation_untagged"`
+	L2transportEncapsulationUntaggedDot1q                           types.Bool                                                                      `tfsdk:"l2transport_encapsulation_untagged_dot1q"`
+	L2transportEncapsulationUntaggedDot1qVlanId                     types.String                                                                    `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId                  types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id"`
+	L2transportEncapsulationUntaggedDot1qVlanId2                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_2"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId2                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_2"`
+	L2transportEncapsulationUntaggedDot1qVlanId3                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_3"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId3                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_3"`
+	L2transportEncapsulationUntaggedDot1qVlanId4                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_4"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId4                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_4"`
+	L2transportEncapsulationUntaggedDot1qVlanId5                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_5"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId5                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_5"`
+	L2transportEncapsulationUntaggedDot1qVlanId6                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_6"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId6                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_6"`
+	L2transportEncapsulationUntaggedDot1qVlanId7                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_7"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId7                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_7"`
+	L2transportEncapsulationUntaggedDot1qVlanId8                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_8"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId8                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_8"`
+	L2transportEncapsulationUntaggedDot1qVlanId9                    types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_vlan_id_9"`
+	L2transportEncapsulationUntaggedDot1qEndVlanId9                 types.Int64                                                                     `tfsdk:"l2transport_encapsulation_untagged_dot1q_end_vlan_id_9"`
+	L2transportEncapsulationUntaggedIngressSourceMac                types.String                                                                    `tfsdk:"l2transport_encapsulation_untagged_ingress_source_mac"`
+	L2transportEncapsulationDefault                                 types.Bool                                                                      `tfsdk:"l2transport_encapsulation_default"`
+	L2transportEncapsulationListExtendedDot1q                       types.Bool                                                                      `tfsdk:"l2transport_encapsulation_list_extended_dot1q"`
+	L2transportEncapsulationListExtendedDot1qVlanRanges             types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1q_vlan_ranges"`
+	L2transportEncapsulationListExtendedDot1qOuterCos               types.Int64                                                                     `tfsdk:"l2transport_encapsulation_list_extended_dot1q_outer_cos"`
+	L2transportEncapsulationListExtendedDot1qSecondDot1q            types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1q_second_dot1q"`
+	L2transportEncapsulationListExtendedDot1qInnerCos               types.Int64                                                                     `tfsdk:"l2transport_encapsulation_list_extended_dot1q_inner_cos"`
+	L2transportEncapsulationListExtendedDot1qExact                  types.Bool                                                                      `tfsdk:"l2transport_encapsulation_list_extended_dot1q_exact"`
+	L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe  types.Bool                                                                      `tfsdk:"l2transport_encapsulation_list_extended_dot1q_payload_ethertype_pppoe"`
+	L2transportEncapsulationListExtendedDot1qIngressSourceMac       types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1q_ingress_source_mac"`
+	L2transportEncapsulationListExtendedDot1qIngressDestinationMac  types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1q_ingress_destination_mac"`
+	L2transportEncapsulationListExtendedDot1ad                      types.Bool                                                                      `tfsdk:"l2transport_encapsulation_list_extended_dot1ad"`
+	L2transportEncapsulationListExtendedDot1adVlanRanges            types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_vlan_ranges"`
+	L2transportEncapsulationListExtendedDot1adOuterCos              types.Int64                                                                     `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_outer_cos"`
+	L2transportEncapsulationListExtendedDot1adDot1q                 types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_dot1q"`
+	L2transportEncapsulationListExtendedDot1adInnerCos              types.Int64                                                                     `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_inner_cos"`
+	L2transportEncapsulationListExtendedDot1adExact                 types.Bool                                                                      `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_exact"`
+	L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe types.Bool                                                                      `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_payload_ethertype_pppoe"`
+	L2transportEncapsulationListExtendedDot1adIngressSourceMac      types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_ingress_source_mac"`
+	L2transportEncapsulationListExtendedDot1adIngressDestinationMac types.String                                                                    `tfsdk:"l2transport_encapsulation_list_extended_dot1ad_ingress_destination_mac"`
+	RewriteIngressTagPopOne                                         types.Bool                                                                      `tfsdk:"rewrite_ingress_tag_pop_one"`
+	RewriteIngressTagPopTwo                                         types.Bool                                                                      `tfsdk:"rewrite_ingress_tag_pop_two"`
+	Shutdown                                                        types.Bool                                                                      `tfsdk:"shutdown"`
+	Mtu                                                             types.Int64                                                                     `tfsdk:"mtu"`
+	LoggingEventsLinkStatus                                         types.Bool                                                                      `tfsdk:"logging_events_link_status"`
+	Bandwidth                                                       types.Int64                                                                     `tfsdk:"bandwidth"`
+	Description                                                     types.String                                                                    `tfsdk:"description"`
+	LoadInterval                                                    types.Int64                                                                     `tfsdk:"load_interval"`
+	Vrf                                                             types.String                                                                    `tfsdk:"vrf"`
+	Ipv4Address                                                     types.String                                                                    `tfsdk:"ipv4_address"`
+	Ipv4Netmask                                                     types.String                                                                    `tfsdk:"ipv4_netmask"`
+	Ipv4RouteTag                                                    types.Int64                                                                     `tfsdk:"ipv4_route_tag"`
+	Ipv4Algorithm                                                   types.Int64                                                                     `tfsdk:"ipv4_algorithm"`
+	Ipv4Secondaries                                                 []InterfaceBundleEtherSubinterfaceIpv4Secondaries                               `tfsdk:"ipv4_secondaries"`
+	Ipv4PointToPoint                                                types.Bool                                                                      `tfsdk:"ipv4_point_to_point"`
+	Ipv4Mtu                                                         types.Int64                                                                     `tfsdk:"ipv4_mtu"`
+	Ipv4Redirects                                                   types.Bool                                                                      `tfsdk:"ipv4_redirects"`
+	Ipv4MaskReply                                                   types.Bool                                                                      `tfsdk:"ipv4_mask_reply"`
+	Ipv4HelperAddresses                                             []InterfaceBundleEtherSubinterfaceIpv4HelperAddresses                           `tfsdk:"ipv4_helper_addresses"`
+	Ipv4UnreachablesDisable                                         types.Bool                                                                      `tfsdk:"ipv4_unreachables_disable"`
+	Ipv4TcpMssAdjust                                                types.Bool                                                                      `tfsdk:"ipv4_tcp_mss_adjust"`
+	Ipv4Unnumbered                                                  types.String                                                                    `tfsdk:"ipv4_unnumbered"`
+	Ipv4ForwardingEnable                                            types.Bool                                                                      `tfsdk:"ipv4_forwarding_enable"`
+	Ipv4TtlPropagateDisable                                         types.Bool                                                                      `tfsdk:"ipv4_ttl_propagate_disable"`
+	Ipv4VerifyUnicastSourceReachableViaType                         types.String                                                                    `tfsdk:"ipv4_verify_unicast_source_reachable_via_type"`
+	Ipv4VerifyUnicastSourceReachableViaAllowSelfPing                types.Bool                                                                      `tfsdk:"ipv4_verify_unicast_source_reachable_via_allow_self_ping"`
+	Ipv4VerifyUnicastSourceReachableViaAllowDefault                 types.Bool                                                                      `tfsdk:"ipv4_verify_unicast_source_reachable_via_allow_default"`
+	Ipv4AccessGroupIngressAcl1                                      types.String                                                                    `tfsdk:"ipv4_access_group_ingress_acl1"`
+	Ipv4AccessGroupIngressHardwareCount                             types.Bool                                                                      `tfsdk:"ipv4_access_group_ingress_hardware_count"`
+	Ipv4AccessGroupIngressInterfaceStatistics                       types.Bool                                                                      `tfsdk:"ipv4_access_group_ingress_interface_statistics"`
+	Ipv4AccessGroupIngressCompress                                  types.Int64                                                                     `tfsdk:"ipv4_access_group_ingress_compress"`
+	Ipv4AccessGroupEgressAcl                                        types.String                                                                    `tfsdk:"ipv4_access_group_egress_acl"`
+	Ipv4AccessGroupEgressHardwareCount                              types.Bool                                                                      `tfsdk:"ipv4_access_group_egress_hardware_count"`
+	Ipv4AccessGroupEgressInterfaceStatistics                        types.Bool                                                                      `tfsdk:"ipv4_access_group_egress_interface_statistics"`
+	Ipv4AccessGroupEgressCompress                                   types.Int64                                                                     `tfsdk:"ipv4_access_group_egress_compress"`
+	Ipv6VerifyUnicastSourceReachableViaType                         types.String                                                                    `tfsdk:"ipv6_verify_unicast_source_reachable_via_type"`
+	Ipv6VerifyUnicastSourceReachableViaAllowSelfPing                types.Bool                                                                      `tfsdk:"ipv6_verify_unicast_source_reachable_via_allow_self_ping"`
+	Ipv6VerifyUnicastSourceReachableViaAllowDefault                 types.Bool                                                                      `tfsdk:"ipv6_verify_unicast_source_reachable_via_allow_default"`
+	Ipv6AccessGroupIngressAcl1                                      types.String                                                                    `tfsdk:"ipv6_access_group_ingress_acl1"`
+	Ipv6AccessGroupIngressInterfaceStatistics                       types.Bool                                                                      `tfsdk:"ipv6_access_group_ingress_interface_statistics"`
+	Ipv6AccessGroupIngressCompress                                  types.Int64                                                                     `tfsdk:"ipv6_access_group_ingress_compress"`
+	Ipv6AccessGroupEgressAcl                                        types.String                                                                    `tfsdk:"ipv6_access_group_egress_acl"`
+	Ipv6AccessGroupEgressInterfaceStatistics                        types.Bool                                                                      `tfsdk:"ipv6_access_group_egress_interface_statistics"`
+	Ipv6AccessGroupEgressCompress                                   types.Int64                                                                     `tfsdk:"ipv6_access_group_egress_compress"`
+	Ipv6Enable                                                      types.Bool                                                                      `tfsdk:"ipv6_enable"`
+	Ipv6TtlPropagateDisable                                         types.Bool                                                                      `tfsdk:"ipv6_ttl_propagate_disable"`
+	Ipv6Addresses                                                   []InterfaceBundleEtherSubinterfaceIpv6Addresses                                 `tfsdk:"ipv6_addresses"`
+	Ipv6LinkLocalAddress                                            types.String                                                                    `tfsdk:"ipv6_link_local_address"`
+	Ipv6LinkLocalZone                                               types.String                                                                    `tfsdk:"ipv6_link_local_zone"`
+	Ipv6LinkLocalRouteTag                                           types.Int64                                                                     `tfsdk:"ipv6_link_local_route_tag"`
+	Ipv6Eui64Addresses                                              []InterfaceBundleEtherSubinterfaceIpv6Eui64Addresses                            `tfsdk:"ipv6_eui64_addresses"`
+	Ipv6Autoconfig                                                  types.Bool                                                                      `tfsdk:"ipv6_autoconfig"`
+	Ipv6Dhcp                                                        types.Bool                                                                      `tfsdk:"ipv6_dhcp"`
+	Ipv6Mtu                                                         types.Int64                                                                     `tfsdk:"ipv6_mtu"`
+	Ipv6UnreachablesDisable                                         types.Bool                                                                      `tfsdk:"ipv6_unreachables_disable"`
+	Ipv6TcpMssAdjust                                                types.Bool                                                                      `tfsdk:"ipv6_tcp_mss_adjust"`
+	Ipv6NdReachableTime                                             types.Int64                                                                     `tfsdk:"ipv6_nd_reachable_time"`
+	Ipv6NdCacheLimit                                                types.Int64                                                                     `tfsdk:"ipv6_nd_cache_limit"`
+	Ipv6NdDadAttempts                                               types.Int64                                                                     `tfsdk:"ipv6_nd_dad_attempts"`
+	Ipv6NdUnicastRa                                                 types.Bool                                                                      `tfsdk:"ipv6_nd_unicast_ra"`
+	Ipv6NdSuppressRa                                                types.Bool                                                                      `tfsdk:"ipv6_nd_suppress_ra"`
+	Ipv6NdManagedConfigFlag                                         types.Bool                                                                      `tfsdk:"ipv6_nd_managed_config_flag"`
+	Ipv6NdOtherConfigFlag                                           types.Bool                                                                      `tfsdk:"ipv6_nd_other_config_flag"`
+	Ipv6NdNsInterval                                                types.Int64                                                                     `tfsdk:"ipv6_nd_ns_interval"`
+	Ipv6NdRaIntervalMax                                             types.Int64                                                                     `tfsdk:"ipv6_nd_ra_interval_max"`
+	Ipv6NdRaIntervalMin                                             types.Int64                                                                     `tfsdk:"ipv6_nd_ra_interval_min"`
+	Ipv6NdRaLifetime                                                types.Int64                                                                     `tfsdk:"ipv6_nd_ra_lifetime"`
+	Ipv6NdRedirects                                                 types.Bool                                                                      `tfsdk:"ipv6_nd_redirects"`
+	Ipv6NdPrefixDefaultNoAdv                                        types.Bool                                                                      `tfsdk:"ipv6_nd_prefix_default_no_adv"`
+	Ipv6NdPrefixDefaultNoAutoconfig                                 types.Bool                                                                      `tfsdk:"ipv6_nd_prefix_default_no_autoconfig"`
+	EthernetCfmMepDomains                                           []InterfaceBundleEtherSubinterfaceEthernetCfmMepDomains                         `tfsdk:"ethernet_cfm_mep_domains"`
+	EthernetCfmAisTransmissionUpInterval                            types.String                                                                    `tfsdk:"ethernet_cfm_ais_transmission_up_interval"`
+	EthernetCfmAisTransmissionUpCos                                 types.Int64                                                                     `tfsdk:"ethernet_cfm_ais_transmission_up_cos"`
+	EthernetCfmBandwidthNotificationsHoldOff                        types.Int64                                                                     `tfsdk:"ethernet_cfm_bandwidth_notifications_hold_off"`
+	EthernetCfmBandwidthNotificationsWaitToRestore                  types.Int64                                                                     `tfsdk:"ethernet_cfm_bandwidth_notifications_wait_to_restore"`
+	EthernetCfmBandwidthNotificationsLossThreshold                  types.Int64                                                                     `tfsdk:"ethernet_cfm_bandwidth_notifications_loss_threshold"`
+	EthernetCfmBandwidthNotificationsLogChanges                     types.Bool                                                                      `tfsdk:"ethernet_cfm_bandwidth_notifications_log_changes"`
+	FlowIpv4IngressMonitors                                         []InterfaceBundleEtherSubinterfaceFlowIpv4IngressMonitors                       `tfsdk:"flow_ipv4_ingress_monitors"`
+	FlowIpv4IngressMonitorSamplers                                  []InterfaceBundleEtherSubinterfaceFlowIpv4IngressMonitorSamplers                `tfsdk:"flow_ipv4_ingress_monitor_samplers"`
+	FlowIpv4EgressMonitors                                          []InterfaceBundleEtherSubinterfaceFlowIpv4EgressMonitors                        `tfsdk:"flow_ipv4_egress_monitors"`
+	FlowIpv4EgressMonitorSamplers                                   []InterfaceBundleEtherSubinterfaceFlowIpv4EgressMonitorSamplers                 `tfsdk:"flow_ipv4_egress_monitor_samplers"`
+	FlowIpv6IngressMonitors                                         []InterfaceBundleEtherSubinterfaceFlowIpv6IngressMonitors                       `tfsdk:"flow_ipv6_ingress_monitors"`
+	FlowIpv6IngressMonitorSamplers                                  []InterfaceBundleEtherSubinterfaceFlowIpv6IngressMonitorSamplers                `tfsdk:"flow_ipv6_ingress_monitor_samplers"`
+	FlowIpv6EgressMonitors                                          []InterfaceBundleEtherSubinterfaceFlowIpv6EgressMonitors                        `tfsdk:"flow_ipv6_egress_monitors"`
+	FlowIpv6EgressMonitorSamplers                                   []InterfaceBundleEtherSubinterfaceFlowIpv6EgressMonitorSamplers                 `tfsdk:"flow_ipv6_egress_monitor_samplers"`
+	ArpTimeout                                                      types.Int64                                                                     `tfsdk:"arp_timeout"`
+	ArpLearningDisable                                              types.Bool                                                                      `tfsdk:"arp_learning_disable"`
+	ArpLearningLocal                                                types.Bool                                                                      `tfsdk:"arp_learning_local"`
+	ArpGratuitousIgnore                                             types.Bool                                                                      `tfsdk:"arp_gratuitous_ignore"`
+	ArpCacheLimit                                                   types.Int64                                                                     `tfsdk:"arp_cache_limit"`
+	ProxyArp                                                        types.Bool                                                                      `tfsdk:"proxy_arp"`
+	MplsMtu                                                         types.Int64                                                                     `tfsdk:"mpls_mtu"`
+	Lldp                                                            types.Bool                                                                      `tfsdk:"lldp"`
+	LldpTransmitDisable                                             types.Bool                                                                      `tfsdk:"lldp_transmit_disable"`
+	LldpReceiveDisable                                              types.Bool                                                                      `tfsdk:"lldp_receive_disable"`
+	MonitorSessions                                                 []InterfaceBundleEtherSubinterfaceMonitorSessions                               `tfsdk:"monitor_sessions"`
+	Ptp                                                             types.Bool                                                                      `tfsdk:"ptp"`
+	PtpProfile                                                      types.String                                                                    `tfsdk:"ptp_profile"`
+	PtpTransportIpv4                                                types.Bool                                                                      `tfsdk:"ptp_transport_ipv4"`
+	PtpTransportEthernet                                            types.Bool                                                                      `tfsdk:"ptp_transport_ethernet"`
+	PtpTransportIpv6                                                types.Bool                                                                      `tfsdk:"ptp_transport_ipv6"`
+	PtpClockOperationOneStep                                        types.Bool                                                                      `tfsdk:"ptp_clock_operation_one_step"`
+	PtpClockOperationTwoStep                                        types.Bool                                                                      `tfsdk:"ptp_clock_operation_two_step"`
+	PtpAnnounceInterval                                             types.String                                                                    `tfsdk:"ptp_announce_interval"`
+	PtpAnnounceFrequency                                            types.String                                                                    `tfsdk:"ptp_announce_frequency"`
+	PtpAnnounceTimeout                                              types.Int64                                                                     `tfsdk:"ptp_announce_timeout"`
+	PtpAnnounceGrantDuration                                        types.Int64                                                                     `tfsdk:"ptp_announce_grant_duration"`
+	PtpSyncInterval                                                 types.String                                                                    `tfsdk:"ptp_sync_interval"`
+	PtpSyncFrequency                                                types.String                                                                    `tfsdk:"ptp_sync_frequency"`
+	PtpSyncGrantDuration                                            types.Int64                                                                     `tfsdk:"ptp_sync_grant_duration"`
+	PtpSyncTimeout                                                  types.Int64                                                                     `tfsdk:"ptp_sync_timeout"`
+	PtpDelayRequestInterval                                         types.String                                                                    `tfsdk:"ptp_delay_request_interval"`
+	PtpDelayRequestFrequency                                        types.String                                                                    `tfsdk:"ptp_delay_request_frequency"`
+	PtpCos                                                          types.Int64                                                                     `tfsdk:"ptp_cos"`
+	PtpCosEvent                                                     types.Int64                                                                     `tfsdk:"ptp_cos_event"`
+	PtpCosGeneral                                                   types.Int64                                                                     `tfsdk:"ptp_cos_general"`
+	PtpDscp                                                         types.Int64                                                                     `tfsdk:"ptp_dscp"`
+	PtpDscpEvent                                                    types.Int64                                                                     `tfsdk:"ptp_dscp_event"`
+	PtpDscpGeneral                                                  types.Int64                                                                     `tfsdk:"ptp_dscp_general"`
+	PtpIpv4Ttl                                                      types.Int64                                                                     `tfsdk:"ptp_ipv4_ttl"`
+	PtpIpv6HopLimit                                                 types.Int64                                                                     `tfsdk:"ptp_ipv6_hop_limit"`
+	PtpDelayAsymmetryValue                                          types.Int64                                                                     `tfsdk:"ptp_delay_asymmetry_value"`
+	PtpDelayAsymmetryUnitNanoseconds                                types.Bool                                                                      `tfsdk:"ptp_delay_asymmetry_unit_nanoseconds"`
+	PtpDelayAsymmetryUnitMicroseconds                               types.Bool                                                                      `tfsdk:"ptp_delay_asymmetry_unit_microseconds"`
+	PtpDelayAsymmetryUnitMilliseconds                               types.Bool                                                                      `tfsdk:"ptp_delay_asymmetry_unit_milliseconds"`
+	PtpDelayResponseGrantDuration                                   types.Int64                                                                     `tfsdk:"ptp_delay_response_grant_duration"`
+	PtpDelayResponseTimeout                                         types.Int64                                                                     `tfsdk:"ptp_delay_response_timeout"`
+	PtpUnicastGrantInvalidRequestReduce                             types.Bool                                                                      `tfsdk:"ptp_unicast_grant_invalid_request_reduce"`
+	PtpUnicastGrantInvalidRequestDeny                               types.Bool                                                                      `tfsdk:"ptp_unicast_grant_invalid_request_deny"`
+	PtpMulticast                                                    types.Bool                                                                      `tfsdk:"ptp_multicast"`
+	PtpMulticastMixed                                               types.Bool                                                                      `tfsdk:"ptp_multicast_mixed"`
+	PtpMulticastDisable                                             types.Bool                                                                      `tfsdk:"ptp_multicast_disable"`
+	PtpMulticastTargetAddressMacForwardable                         types.Bool                                                                      `tfsdk:"ptp_multicast_target_address_mac_forwardable"`
+	PtpMulticastTargetAddressMacNonForwardable                      types.Bool                                                                      `tfsdk:"ptp_multicast_target_address_mac_non_forwardable"`
+	PtpPortStateSlaveOnly                                           types.Bool                                                                      `tfsdk:"ptp_port_state_slave_only"`
+	PtpPortStateMasterOnly                                          types.Bool                                                                      `tfsdk:"ptp_port_state_master_only"`
+	PtpPortStateAny                                                 types.Bool                                                                      `tfsdk:"ptp_port_state_any"`
+	PtpSourceIpv4Address                                            types.String                                                                    `tfsdk:"ptp_source_ipv4_address"`
+	PtpSourceIpv4AddressDisable                                     types.Bool                                                                      `tfsdk:"ptp_source_ipv4_address_disable"`
+	PtpSourceIpv6Address                                            types.String                                                                    `tfsdk:"ptp_source_ipv6_address"`
+	PtpSourceIpv6AddressDisable                                     types.Bool                                                                      `tfsdk:"ptp_source_ipv6_address_disable"`
+	PtpLocalPriority                                                types.Int64                                                                     `tfsdk:"ptp_local_priority"`
+	PtpSlaveIpv4s                                                   []InterfaceBundleEtherSubinterfacePtpSlaveIpv4s                                 `tfsdk:"ptp_slave_ipv4s"`
+	PtpSlaveIpv6s                                                   []InterfaceBundleEtherSubinterfacePtpSlaveIpv6s                                 `tfsdk:"ptp_slave_ipv6s"`
+	PtpSlaveEthernets                                               []InterfaceBundleEtherSubinterfacePtpSlaveEthernets                             `tfsdk:"ptp_slave_ethernets"`
+	PtpMasterIpv4s                                                  []InterfaceBundleEtherSubinterfacePtpMasterIpv4s                                `tfsdk:"ptp_master_ipv4s"`
+	PtpMasterIpv6s                                                  []InterfaceBundleEtherSubinterfacePtpMasterIpv6s                                `tfsdk:"ptp_master_ipv6s"`
+	PtpMasterEthernets                                              []InterfaceBundleEtherSubinterfacePtpMasterEthernets                            `tfsdk:"ptp_master_ethernets"`
+	PtpInteropProfileDefault                                        types.Bool                                                                      `tfsdk:"ptp_interop_profile_default"`
+	PtpInteropProfileG82651                                         types.Bool                                                                      `tfsdk:"ptp_interop_profile_g_8265_1"`
+	PtpInteropProfileG82751                                         types.Bool                                                                      `tfsdk:"ptp_interop_profile_g_8275_1"`
+	PtpInteropProfileG82752                                         types.Bool                                                                      `tfsdk:"ptp_interop_profile_g_8275_2"`
+	PtpInteropDomain                                                types.Int64                                                                     `tfsdk:"ptp_interop_domain"`
+	PtpInteropEgressConversionPriority1                             types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_priority1"`
+	PtpInteropEgressConversionPriority2                             types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_priority2"`
+	PtpInteropEgressConversionClockAccuracy                         types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_clock_accuracy"`
+	PtpInteropEgressConversionOffsetScaledLogVariance               types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_offset_scaled_log_variance"`
+	PtpInteropEgressConversionClockClassDefault                     types.Int64                                                                     `tfsdk:"ptp_interop_egress_conversion_clock_class_default"`
+	PtpInteropEgressConversionClockClassMappings                    []InterfaceBundleEtherSubinterfacePtpInteropEgressConversionClockClassMappings  `tfsdk:"ptp_interop_egress_conversion_clock_class_mappings"`
+	PtpInteropIngressConversionPriority1                            types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_priority1"`
+	PtpInteropIngressConversionPriority2                            types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_priority2"`
+	PtpInteropIngressConversionClockAccuracy                        types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_clock_accuracy"`
+	PtpInteropIngressConversionOffsetScaledLogVariance              types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_offset_scaled_log_variance"`
+	PtpInteropIngressConversionClockClassDefault                    types.Int64                                                                     `tfsdk:"ptp_interop_ingress_conversion_clock_class_default"`
+	PtpInteropIngressConversionClockClassMappings                   []InterfaceBundleEtherSubinterfacePtpInteropIngressConversionClockClassMappings `tfsdk:"ptp_interop_ingress_conversion_clock_class_mappings"`
 }
 type InterfaceBundleEtherSubinterfaceServicePolicyInput struct {
 	Name types.String `tfsdk:"name"`
@@ -619,16 +873,433 @@ func (data InterfaceBundleEtherSubinterface) toBody(ctx context.Context, provide
 	if !data.EncapsulationDot1qSecondDot1q.IsNull() && !data.EncapsulationDot1qSecondDot1q.IsUnknown() {
 		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:encapsulation.dot1q.second-dot1q", strconv.FormatInt(data.EncapsulationDot1qSecondDot1q.ValueInt64(), 10))
 	}
+	if !data.L2transportEncapsulationDot1q.IsNull() && !data.L2transportEncapsulationDot1q.IsUnknown() {
+		if data.L2transportEncapsulationDot1q.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q", map[string]string{})
+		}
+	}
 	if !data.L2transportEncapsulationDot1qVlanId.IsNull() && !data.L2transportEncapsulationDot1qVlanId.IsUnknown() {
 		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id", data.L2transportEncapsulationDot1qVlanId.ValueString())
 	}
+	if !data.L2transportEncapsulationDot1qEndVlanId.IsNull() && !data.L2transportEncapsulationDot1qEndVlanId.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id", data.L2transportEncapsulationDot1qEndVlanId.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1qVlanId2.IsNull() && !data.L2transportEncapsulationDot1qVlanId2.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-2", data.L2transportEncapsulationDot1qVlanId2.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId2.IsNull() && !data.L2transportEncapsulationDot1qEndVlanId2.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-2", strconv.FormatInt(data.L2transportEncapsulationDot1qEndVlanId2.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId3.IsNull() && !data.L2transportEncapsulationDot1qVlanId3.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-3", data.L2transportEncapsulationDot1qVlanId3.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId3.IsNull() && !data.L2transportEncapsulationDot1qEndVlanId3.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-3", strconv.FormatInt(data.L2transportEncapsulationDot1qEndVlanId3.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId4.IsNull() && !data.L2transportEncapsulationDot1qVlanId4.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-4", data.L2transportEncapsulationDot1qVlanId4.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId4.IsNull() && !data.L2transportEncapsulationDot1qEndVlanId4.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-4", strconv.FormatInt(data.L2transportEncapsulationDot1qEndVlanId4.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId5.IsNull() && !data.L2transportEncapsulationDot1qVlanId5.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-5", data.L2transportEncapsulationDot1qVlanId5.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId5.IsNull() && !data.L2transportEncapsulationDot1qEndVlanId5.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-5", strconv.FormatInt(data.L2transportEncapsulationDot1qEndVlanId5.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId6.IsNull() && !data.L2transportEncapsulationDot1qVlanId6.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-6", data.L2transportEncapsulationDot1qVlanId6.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId6.IsNull() && !data.L2transportEncapsulationDot1qEndVlanId6.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-6", strconv.FormatInt(data.L2transportEncapsulationDot1qEndVlanId6.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId7.IsNull() && !data.L2transportEncapsulationDot1qVlanId7.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-7", data.L2transportEncapsulationDot1qVlanId7.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId7.IsNull() && !data.L2transportEncapsulationDot1qEndVlanId7.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-7", strconv.FormatInt(data.L2transportEncapsulationDot1qEndVlanId7.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId8.IsNull() && !data.L2transportEncapsulationDot1qVlanId8.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-8", data.L2transportEncapsulationDot1qVlanId8.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId8.IsNull() && !data.L2transportEncapsulationDot1qEndVlanId8.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-8", strconv.FormatInt(data.L2transportEncapsulationDot1qEndVlanId8.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId9.IsNull() && !data.L2transportEncapsulationDot1qVlanId9.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-9", data.L2transportEncapsulationDot1qVlanId9.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId9.IsNull() && !data.L2transportEncapsulationDot1qEndVlanId9.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-9", strconv.FormatInt(data.L2transportEncapsulationDot1qEndVlanId9.ValueInt64(), 10))
+	}
 	if !data.L2transportEncapsulationDot1qSecondDot1q.IsNull() && !data.L2transportEncapsulationDot1qSecondDot1q.IsUnknown() {
 		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.second-dot1q", data.L2transportEncapsulationDot1qSecondDot1q.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1qSecondDot1qEndVlanId.IsNull() && !data.L2transportEncapsulationDot1qSecondDot1qEndVlanId.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.second-dot1q-end-vlan-id", data.L2transportEncapsulationDot1qSecondDot1qEndVlanId.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1qExact.IsNull() && !data.L2transportEncapsulationDot1qExact.IsUnknown() {
+		if data.L2transportEncapsulationDot1qExact.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.exact", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationDot1qIngressSourceMac.IsNull() && !data.L2transportEncapsulationDot1qIngressSourceMac.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.ingress.source-mac", data.L2transportEncapsulationDot1qIngressSourceMac.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTagged.IsNull() && !data.L2transportEncapsulationDot1qPriorityTagged.IsUnknown() {
+		if data.L2transportEncapsulationDot1qPriorityTagged.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1q.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1q.IsUnknown() {
+		if data.L2transportEncapsulationDot1qPriorityTaggedDot1q.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id", data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId2.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId2.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-2", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId2.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId2.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId2.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-2", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId2.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId3.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId3.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-3", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId3.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId3.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId3.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-3", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId3.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId4.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId4.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-4", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId4.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId4.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId4.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-4", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId4.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId5.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId5.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-5", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId5.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId5.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId5.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-5", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId5.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId6.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId6.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-6", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId6.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId6.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId6.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-6", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId6.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId7.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId7.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-7", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId7.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId7.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId7.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-7", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId7.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId8.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId8.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-8", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId8.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId8.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId8.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-8", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId8.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId9.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId9.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-9", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId9.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId9.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId9.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-9", strconv.FormatInt(data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId9.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedExact.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedExact.IsUnknown() {
+		if data.L2transportEncapsulationDot1qPriorityTaggedExact.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.exact", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedIngressSourceMac.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedIngressSourceMac.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.ingress.source-mac", data.L2transportEncapsulationDot1qPriorityTaggedIngressSourceMac.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1ad.IsNull() && !data.L2transportEncapsulationDot1ad.IsUnknown() {
+		if data.L2transportEncapsulationDot1ad.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationDot1adVlanId.IsNull() && !data.L2transportEncapsulationDot1adVlanId.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id", data.L2transportEncapsulationDot1adVlanId.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId.IsNull() && !data.L2transportEncapsulationDot1adEndVlanId.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id", data.L2transportEncapsulationDot1adEndVlanId.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1adVlanId2.IsNull() && !data.L2transportEncapsulationDot1adVlanId2.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-2", strconv.FormatInt(data.L2transportEncapsulationDot1adVlanId2.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId2.IsNull() && !data.L2transportEncapsulationDot1adEndVlanId2.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-2", strconv.FormatInt(data.L2transportEncapsulationDot1adEndVlanId2.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId3.IsNull() && !data.L2transportEncapsulationDot1adVlanId3.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-3", strconv.FormatInt(data.L2transportEncapsulationDot1adVlanId3.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId3.IsNull() && !data.L2transportEncapsulationDot1adEndVlanId3.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-3", strconv.FormatInt(data.L2transportEncapsulationDot1adEndVlanId3.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId4.IsNull() && !data.L2transportEncapsulationDot1adVlanId4.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-4", strconv.FormatInt(data.L2transportEncapsulationDot1adVlanId4.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId4.IsNull() && !data.L2transportEncapsulationDot1adEndVlanId4.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-4", strconv.FormatInt(data.L2transportEncapsulationDot1adEndVlanId4.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId5.IsNull() && !data.L2transportEncapsulationDot1adVlanId5.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-5", strconv.FormatInt(data.L2transportEncapsulationDot1adVlanId5.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId5.IsNull() && !data.L2transportEncapsulationDot1adEndVlanId5.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-5", strconv.FormatInt(data.L2transportEncapsulationDot1adEndVlanId5.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId6.IsNull() && !data.L2transportEncapsulationDot1adVlanId6.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-6", strconv.FormatInt(data.L2transportEncapsulationDot1adVlanId6.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId6.IsNull() && !data.L2transportEncapsulationDot1adEndVlanId6.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-6", strconv.FormatInt(data.L2transportEncapsulationDot1adEndVlanId6.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId7.IsNull() && !data.L2transportEncapsulationDot1adVlanId7.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-7", strconv.FormatInt(data.L2transportEncapsulationDot1adVlanId7.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId7.IsNull() && !data.L2transportEncapsulationDot1adEndVlanId7.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-7", strconv.FormatInt(data.L2transportEncapsulationDot1adEndVlanId7.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId8.IsNull() && !data.L2transportEncapsulationDot1adVlanId8.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-8", strconv.FormatInt(data.L2transportEncapsulationDot1adVlanId8.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId8.IsNull() && !data.L2transportEncapsulationDot1adEndVlanId8.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-8", strconv.FormatInt(data.L2transportEncapsulationDot1adEndVlanId8.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId9.IsNull() && !data.L2transportEncapsulationDot1adVlanId9.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-9", strconv.FormatInt(data.L2transportEncapsulationDot1adVlanId9.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId9.IsNull() && !data.L2transportEncapsulationDot1adEndVlanId9.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-9", strconv.FormatInt(data.L2transportEncapsulationDot1adEndVlanId9.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adDot1q.IsNull() && !data.L2transportEncapsulationDot1adDot1q.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.dot1q", data.L2transportEncapsulationDot1adDot1q.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1adDot1qEndVlanId.IsNull() && !data.L2transportEncapsulationDot1adDot1qEndVlanId.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.dot1q-end-vlan-id", data.L2transportEncapsulationDot1adDot1qEndVlanId.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1adExact.IsNull() && !data.L2transportEncapsulationDot1adExact.IsUnknown() {
+		if data.L2transportEncapsulationDot1adExact.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.exact", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationDot1adIngressSourceMac.IsNull() && !data.L2transportEncapsulationDot1adIngressSourceMac.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.ingress.source-mac", data.L2transportEncapsulationDot1adIngressSourceMac.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTagged.IsNull() && !data.L2transportEncapsulationDot1adPriorityTagged.IsUnknown() {
+		if data.L2transportEncapsulationDot1adPriorityTagged.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1q.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1q.IsUnknown() {
+		if data.L2transportEncapsulationDot1adPriorityTaggedDot1q.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id", data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId.ValueString())
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId2.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId2.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-2", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId2.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId2.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId2.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-2", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId2.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId3.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId3.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-3", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId3.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId3.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId3.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-3", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId3.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId4.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId4.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-4", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId4.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId4.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId4.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-4", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId4.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId5.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId5.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-5", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId5.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId5.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId5.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-5", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId5.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId6.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId6.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-6", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId6.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId6.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId6.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-6", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId6.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId7.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId7.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-7", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId7.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId7.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId7.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-7", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId7.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId8.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId8.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-8", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId8.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId8.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId8.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-8", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId8.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId9.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId9.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-9", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId9.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId9.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId9.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-9", strconv.FormatInt(data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId9.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedExact.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedExact.IsUnknown() {
+		if data.L2transportEncapsulationDot1adPriorityTaggedExact.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.exact", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedIngressSourceMac.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedIngressSourceMac.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.ingress.source-mac", data.L2transportEncapsulationDot1adPriorityTaggedIngressSourceMac.ValueString())
 	}
 	if !data.L2transportEncapsulationUntagged.IsNull() && !data.L2transportEncapsulationUntagged.IsUnknown() {
 		if data.L2transportEncapsulationUntagged.ValueBool() {
 			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged", map[string]string{})
 		}
+	}
+	if !data.L2transportEncapsulationUntaggedDot1q.IsNull() && !data.L2transportEncapsulationUntaggedDot1q.IsUnknown() {
+		if data.L2transportEncapsulationUntaggedDot1q.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId.IsNull() && !data.L2transportEncapsulationUntaggedDot1qVlanId.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id", data.L2transportEncapsulationUntaggedDot1qVlanId.ValueString())
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId.IsNull() && !data.L2transportEncapsulationUntaggedDot1qEndVlanId.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qEndVlanId.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId2.IsNull() && !data.L2transportEncapsulationUntaggedDot1qVlanId2.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-2", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qVlanId2.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId2.IsNull() && !data.L2transportEncapsulationUntaggedDot1qEndVlanId2.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-2", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qEndVlanId2.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId3.IsNull() && !data.L2transportEncapsulationUntaggedDot1qVlanId3.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-3", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qVlanId3.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId3.IsNull() && !data.L2transportEncapsulationUntaggedDot1qEndVlanId3.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-3", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qEndVlanId3.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId4.IsNull() && !data.L2transportEncapsulationUntaggedDot1qVlanId4.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-4", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qVlanId4.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId4.IsNull() && !data.L2transportEncapsulationUntaggedDot1qEndVlanId4.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-4", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qEndVlanId4.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId5.IsNull() && !data.L2transportEncapsulationUntaggedDot1qVlanId5.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-5", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qVlanId5.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId5.IsNull() && !data.L2transportEncapsulationUntaggedDot1qEndVlanId5.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-5", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qEndVlanId5.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId6.IsNull() && !data.L2transportEncapsulationUntaggedDot1qVlanId6.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-6", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qVlanId6.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId6.IsNull() && !data.L2transportEncapsulationUntaggedDot1qEndVlanId6.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-6", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qEndVlanId6.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId7.IsNull() && !data.L2transportEncapsulationUntaggedDot1qVlanId7.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-7", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qVlanId7.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId7.IsNull() && !data.L2transportEncapsulationUntaggedDot1qEndVlanId7.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-7", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qEndVlanId7.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId8.IsNull() && !data.L2transportEncapsulationUntaggedDot1qVlanId8.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-8", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qVlanId8.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId8.IsNull() && !data.L2transportEncapsulationUntaggedDot1qEndVlanId8.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-8", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qEndVlanId8.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId9.IsNull() && !data.L2transportEncapsulationUntaggedDot1qVlanId9.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-9", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qVlanId9.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId9.IsNull() && !data.L2transportEncapsulationUntaggedDot1qEndVlanId9.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-9", strconv.FormatInt(data.L2transportEncapsulationUntaggedDot1qEndVlanId9.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationUntaggedIngressSourceMac.IsNull() && !data.L2transportEncapsulationUntaggedIngressSourceMac.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.ingress.source-mac", data.L2transportEncapsulationUntaggedIngressSourceMac.ValueString())
+	}
+	if !data.L2transportEncapsulationDefault.IsNull() && !data.L2transportEncapsulationDefault.IsUnknown() {
+		if data.L2transportEncapsulationDefault.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.default", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationListExtendedDot1q.IsNull() && !data.L2transportEncapsulationListExtendedDot1q.IsUnknown() {
+		if data.L2transportEncapsulationListExtendedDot1q.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qVlanRanges.IsNull() && !data.L2transportEncapsulationListExtendedDot1qVlanRanges.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.vlan-ranges", data.L2transportEncapsulationListExtendedDot1qVlanRanges.ValueString())
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qOuterCos.IsNull() && !data.L2transportEncapsulationListExtendedDot1qOuterCos.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.outer-cos", strconv.FormatInt(data.L2transportEncapsulationListExtendedDot1qOuterCos.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qSecondDot1q.IsNull() && !data.L2transportEncapsulationListExtendedDot1qSecondDot1q.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.second-dot1q", data.L2transportEncapsulationListExtendedDot1qSecondDot1q.ValueString())
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qInnerCos.IsNull() && !data.L2transportEncapsulationListExtendedDot1qInnerCos.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.inner-cos", strconv.FormatInt(data.L2transportEncapsulationListExtendedDot1qInnerCos.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qExact.IsNull() && !data.L2transportEncapsulationListExtendedDot1qExact.IsUnknown() {
+		if data.L2transportEncapsulationListExtendedDot1qExact.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.exact", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe.IsNull() && !data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe.IsUnknown() {
+		if data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.payload-ethertype-pppoe", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qIngressSourceMac.IsNull() && !data.L2transportEncapsulationListExtendedDot1qIngressSourceMac.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.ingress.source-mac", data.L2transportEncapsulationListExtendedDot1qIngressSourceMac.ValueString())
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qIngressDestinationMac.IsNull() && !data.L2transportEncapsulationListExtendedDot1qIngressDestinationMac.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.ingress.destination-mac", data.L2transportEncapsulationListExtendedDot1qIngressDestinationMac.ValueString())
+	}
+	if !data.L2transportEncapsulationListExtendedDot1ad.IsNull() && !data.L2transportEncapsulationListExtendedDot1ad.IsUnknown() {
+		if data.L2transportEncapsulationListExtendedDot1ad.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adVlanRanges.IsNull() && !data.L2transportEncapsulationListExtendedDot1adVlanRanges.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.vlan-ranges", data.L2transportEncapsulationListExtendedDot1adVlanRanges.ValueString())
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adOuterCos.IsNull() && !data.L2transportEncapsulationListExtendedDot1adOuterCos.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.outer-cos", strconv.FormatInt(data.L2transportEncapsulationListExtendedDot1adOuterCos.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adDot1q.IsNull() && !data.L2transportEncapsulationListExtendedDot1adDot1q.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.dot1q", data.L2transportEncapsulationListExtendedDot1adDot1q.ValueString())
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adInnerCos.IsNull() && !data.L2transportEncapsulationListExtendedDot1adInnerCos.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.inner-cos", strconv.FormatInt(data.L2transportEncapsulationListExtendedDot1adInnerCos.ValueInt64(), 10))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adExact.IsNull() && !data.L2transportEncapsulationListExtendedDot1adExact.IsUnknown() {
+		if data.L2transportEncapsulationListExtendedDot1adExact.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.exact", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe.IsNull() && !data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe.IsUnknown() {
+		if data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe.ValueBool() {
+			body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.payload-ethertype-pppoe", map[string]string{})
+		}
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adIngressSourceMac.IsNull() && !data.L2transportEncapsulationListExtendedDot1adIngressSourceMac.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.ingress.source-mac", data.L2transportEncapsulationListExtendedDot1adIngressSourceMac.ValueString())
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adIngressDestinationMac.IsNull() && !data.L2transportEncapsulationListExtendedDot1adIngressDestinationMac.IsUnknown() {
+		body, _ = sjson.Set(body, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.ingress.destination-mac", data.L2transportEncapsulationListExtendedDot1adIngressDestinationMac.ValueString())
 	}
 	if !data.RewriteIngressTagPopOne.IsNull() && !data.RewriteIngressTagPopOne.IsUnknown() {
 		if data.RewriteIngressTagPopOne.ValueBool() {
@@ -1842,15 +2513,495 @@ func (data *InterfaceBundleEtherSubinterface) updateFromBody(ctx context.Context
 	} else {
 		data.EncapsulationDot1qSecondDot1q = types.Int64Null()
 	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q"); !data.L2transportEncapsulationDot1q.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationDot1q = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationDot1q = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationDot1q = types.BoolNull()
+	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qVlanId.IsNull() {
 		data.L2transportEncapsulationDot1qVlanId = types.StringValue(value.String())
 	} else {
 		data.L2transportEncapsulationDot1qVlanId = types.StringNull()
 	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qEndVlanId.IsNull() {
+		data.L2transportEncapsulationDot1qEndVlanId = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1qEndVlanId = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-2"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qVlanId2.IsNull() {
+		data.L2transportEncapsulationDot1qVlanId2 = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1qVlanId2 = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qEndVlanId2.IsNull() {
+		data.L2transportEncapsulationDot1qEndVlanId2 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qEndVlanId2 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-3"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qVlanId3.IsNull() {
+		data.L2transportEncapsulationDot1qVlanId3 = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1qVlanId3 = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qEndVlanId3.IsNull() {
+		data.L2transportEncapsulationDot1qEndVlanId3 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qEndVlanId3 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-4"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qVlanId4.IsNull() {
+		data.L2transportEncapsulationDot1qVlanId4 = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1qVlanId4 = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qEndVlanId4.IsNull() {
+		data.L2transportEncapsulationDot1qEndVlanId4 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qEndVlanId4 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-5"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qVlanId5.IsNull() {
+		data.L2transportEncapsulationDot1qVlanId5 = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1qVlanId5 = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qEndVlanId5.IsNull() {
+		data.L2transportEncapsulationDot1qEndVlanId5 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qEndVlanId5 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-6"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qVlanId6.IsNull() {
+		data.L2transportEncapsulationDot1qVlanId6 = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1qVlanId6 = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qEndVlanId6.IsNull() {
+		data.L2transportEncapsulationDot1qEndVlanId6 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qEndVlanId6 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-7"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qVlanId7.IsNull() {
+		data.L2transportEncapsulationDot1qVlanId7 = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1qVlanId7 = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qEndVlanId7.IsNull() {
+		data.L2transportEncapsulationDot1qEndVlanId7 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qEndVlanId7 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-8"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qVlanId8.IsNull() {
+		data.L2transportEncapsulationDot1qVlanId8 = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1qVlanId8 = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qEndVlanId8.IsNull() {
+		data.L2transportEncapsulationDot1qEndVlanId8 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qEndVlanId8 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-9"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qVlanId9.IsNull() {
+		data.L2transportEncapsulationDot1qVlanId9 = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1qVlanId9 = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qEndVlanId9.IsNull() {
+		data.L2transportEncapsulationDot1qEndVlanId9 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qEndVlanId9 = types.Int64Null()
+	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.second-dot1q"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qSecondDot1q.IsNull() {
 		data.L2transportEncapsulationDot1qSecondDot1q = types.StringValue(value.String())
 	} else {
 		data.L2transportEncapsulationDot1qSecondDot1q = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.second-dot1q-end-vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qSecondDot1qEndVlanId.IsNull() {
+		data.L2transportEncapsulationDot1qSecondDot1qEndVlanId = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1qSecondDot1qEndVlanId = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.exact"); !data.L2transportEncapsulationDot1qExact.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationDot1qExact = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationDot1qExact = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationDot1qExact = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qIngressSourceMac.IsNull() {
+		data.L2transportEncapsulationDot1qIngressSourceMac = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1qIngressSourceMac = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged"); !data.L2transportEncapsulationDot1qPriorityTagged.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationDot1qPriorityTagged = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationDot1qPriorityTagged = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTagged = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q"); !data.L2transportEncapsulationDot1qPriorityTaggedDot1q.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationDot1qPriorityTaggedDot1q = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationDot1qPriorityTaggedDot1q = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1q = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-2"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId2.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId2 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId2 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId2.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId2 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId2 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-3"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId3.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId3 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId3 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId3.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId3 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId3 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-4"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId4.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId4 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId4 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId4.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId4 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId4 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-5"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId5.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId5 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId5 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId5.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId5 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId5 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-6"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId6.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId6 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId6 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId6.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId6 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId6 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-7"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId7.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId7 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId7 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId7.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId7 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId7 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-8"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId8.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId8 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId8 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId8.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId8 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId8 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-9"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId9.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId9 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId9 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId9.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId9 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId9 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.exact"); !data.L2transportEncapsulationDot1qPriorityTaggedExact.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationDot1qPriorityTaggedExact = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationDot1qPriorityTaggedExact = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedExact = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1qPriorityTaggedIngressSourceMac.IsNull() {
+		data.L2transportEncapsulationDot1qPriorityTaggedIngressSourceMac = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedIngressSourceMac = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad"); !data.L2transportEncapsulationDot1ad.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationDot1ad = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationDot1ad = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationDot1ad = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1adVlanId.IsNull() {
+		data.L2transportEncapsulationDot1adVlanId = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1adVlanId = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1adEndVlanId.IsNull() {
+		data.L2transportEncapsulationDot1adEndVlanId = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1adEndVlanId = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-2"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adVlanId2.IsNull() {
+		data.L2transportEncapsulationDot1adVlanId2 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adVlanId2 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adEndVlanId2.IsNull() {
+		data.L2transportEncapsulationDot1adEndVlanId2 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adEndVlanId2 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-3"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adVlanId3.IsNull() {
+		data.L2transportEncapsulationDot1adVlanId3 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adVlanId3 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adEndVlanId3.IsNull() {
+		data.L2transportEncapsulationDot1adEndVlanId3 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adEndVlanId3 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-4"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adVlanId4.IsNull() {
+		data.L2transportEncapsulationDot1adVlanId4 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adVlanId4 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adEndVlanId4.IsNull() {
+		data.L2transportEncapsulationDot1adEndVlanId4 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adEndVlanId4 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-5"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adVlanId5.IsNull() {
+		data.L2transportEncapsulationDot1adVlanId5 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adVlanId5 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adEndVlanId5.IsNull() {
+		data.L2transportEncapsulationDot1adEndVlanId5 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adEndVlanId5 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-6"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adVlanId6.IsNull() {
+		data.L2transportEncapsulationDot1adVlanId6 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adVlanId6 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adEndVlanId6.IsNull() {
+		data.L2transportEncapsulationDot1adEndVlanId6 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adEndVlanId6 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-7"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adVlanId7.IsNull() {
+		data.L2transportEncapsulationDot1adVlanId7 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adVlanId7 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adEndVlanId7.IsNull() {
+		data.L2transportEncapsulationDot1adEndVlanId7 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adEndVlanId7 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-8"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adVlanId8.IsNull() {
+		data.L2transportEncapsulationDot1adVlanId8 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adVlanId8 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adEndVlanId8.IsNull() {
+		data.L2transportEncapsulationDot1adEndVlanId8 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adEndVlanId8 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-9"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adVlanId9.IsNull() {
+		data.L2transportEncapsulationDot1adVlanId9 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adVlanId9 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adEndVlanId9.IsNull() {
+		data.L2transportEncapsulationDot1adEndVlanId9 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adEndVlanId9 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.dot1q"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1adDot1q.IsNull() {
+		data.L2transportEncapsulationDot1adDot1q = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1adDot1q = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.dot1q-end-vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1adDot1qEndVlanId.IsNull() {
+		data.L2transportEncapsulationDot1adDot1qEndVlanId = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1adDot1qEndVlanId = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.exact"); !data.L2transportEncapsulationDot1adExact.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationDot1adExact = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationDot1adExact = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationDot1adExact = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1adIngressSourceMac.IsNull() {
+		data.L2transportEncapsulationDot1adIngressSourceMac = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1adIngressSourceMac = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged"); !data.L2transportEncapsulationDot1adPriorityTagged.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationDot1adPriorityTagged = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationDot1adPriorityTagged = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTagged = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q"); !data.L2transportEncapsulationDot1adPriorityTaggedDot1q.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationDot1adPriorityTaggedDot1q = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationDot1adPriorityTaggedDot1q = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1q = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-2"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId2.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId2 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId2 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId2.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId2 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId2 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-3"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId3.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId3 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId3 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId3.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId3 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId3 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-4"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId4.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId4 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId4 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId4.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId4 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId4 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-5"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId5.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId5 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId5 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId5.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId5 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId5 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-6"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId6.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId6 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId6 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId6.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId6 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId6 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-7"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId7.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId7 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId7 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId7.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId7 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId7 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-8"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId8.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId8 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId8 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId8.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId8 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId8 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-9"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId9.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId9 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId9 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId9.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId9 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId9 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.exact"); !data.L2transportEncapsulationDot1adPriorityTaggedExact.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationDot1adPriorityTaggedExact = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationDot1adPriorityTaggedExact = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedExact = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationDot1adPriorityTaggedIngressSourceMac.IsNull() {
+		data.L2transportEncapsulationDot1adPriorityTaggedIngressSourceMac = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedIngressSourceMac = types.StringNull()
 	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged"); !data.L2transportEncapsulationUntagged.IsNull() {
 		if value.Exists() {
@@ -1860,6 +3011,233 @@ func (data *InterfaceBundleEtherSubinterface) updateFromBody(ctx context.Context
 		}
 	} else {
 		data.L2transportEncapsulationUntagged = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q"); !data.L2transportEncapsulationUntaggedDot1q.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationUntaggedDot1q = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationUntaggedDot1q = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationUntaggedDot1q = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationUntaggedDot1qVlanId.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qVlanId = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qVlanId = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qEndVlanId.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-2"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qVlanId2.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qVlanId2 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qVlanId2 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qEndVlanId2.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId2 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId2 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-3"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qVlanId3.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qVlanId3 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qVlanId3 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qEndVlanId3.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId3 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId3 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-4"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qVlanId4.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qVlanId4 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qVlanId4 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qEndVlanId4.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId4 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId4 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-5"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qVlanId5.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qVlanId5 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qVlanId5 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qEndVlanId5.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId5 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId5 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-6"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qVlanId6.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qVlanId6 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qVlanId6 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qEndVlanId6.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId6 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId6 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-7"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qVlanId7.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qVlanId7 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qVlanId7 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qEndVlanId7.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId7 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId7 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-8"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qVlanId8.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qVlanId8 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qVlanId8 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qEndVlanId8.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId8 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId8 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-9"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qVlanId9.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qVlanId9 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qVlanId9 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationUntaggedDot1qEndVlanId9.IsNull() {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId9 = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId9 = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationUntaggedIngressSourceMac.IsNull() {
+		data.L2transportEncapsulationUntaggedIngressSourceMac = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationUntaggedIngressSourceMac = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.default"); !data.L2transportEncapsulationDefault.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationDefault = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationDefault = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationDefault = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q"); !data.L2transportEncapsulationListExtendedDot1q.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationListExtendedDot1q = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationListExtendedDot1q = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationListExtendedDot1q = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.vlan-ranges"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationListExtendedDot1qVlanRanges.IsNull() {
+		data.L2transportEncapsulationListExtendedDot1qVlanRanges = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationListExtendedDot1qVlanRanges = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.outer-cos"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationListExtendedDot1qOuterCos.IsNull() {
+		data.L2transportEncapsulationListExtendedDot1qOuterCos = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationListExtendedDot1qOuterCos = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.second-dot1q"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationListExtendedDot1qSecondDot1q.IsNull() {
+		data.L2transportEncapsulationListExtendedDot1qSecondDot1q = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationListExtendedDot1qSecondDot1q = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.inner-cos"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationListExtendedDot1qInnerCos.IsNull() {
+		data.L2transportEncapsulationListExtendedDot1qInnerCos = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationListExtendedDot1qInnerCos = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.exact"); !data.L2transportEncapsulationListExtendedDot1qExact.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationListExtendedDot1qExact = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationListExtendedDot1qExact = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationListExtendedDot1qExact = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.payload-ethertype-pppoe"); !data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationListExtendedDot1qIngressSourceMac.IsNull() {
+		data.L2transportEncapsulationListExtendedDot1qIngressSourceMac = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationListExtendedDot1qIngressSourceMac = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.ingress.destination-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationListExtendedDot1qIngressDestinationMac.IsNull() {
+		data.L2transportEncapsulationListExtendedDot1qIngressDestinationMac = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationListExtendedDot1qIngressDestinationMac = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad"); !data.L2transportEncapsulationListExtendedDot1ad.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationListExtendedDot1ad = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationListExtendedDot1ad = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationListExtendedDot1ad = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.vlan-ranges"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationListExtendedDot1adVlanRanges.IsNull() {
+		data.L2transportEncapsulationListExtendedDot1adVlanRanges = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationListExtendedDot1adVlanRanges = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.outer-cos"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationListExtendedDot1adOuterCos.IsNull() {
+		data.L2transportEncapsulationListExtendedDot1adOuterCos = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationListExtendedDot1adOuterCos = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.dot1q"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationListExtendedDot1adDot1q.IsNull() {
+		data.L2transportEncapsulationListExtendedDot1adDot1q = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationListExtendedDot1adDot1q = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.inner-cos"); value.Exists() && value.Type == gjson.Number && !data.L2transportEncapsulationListExtendedDot1adInnerCos.IsNull() {
+		data.L2transportEncapsulationListExtendedDot1adInnerCos = types.Int64Value(value.Int())
+	} else {
+		data.L2transportEncapsulationListExtendedDot1adInnerCos = types.Int64Null()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.exact"); !data.L2transportEncapsulationListExtendedDot1adExact.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationListExtendedDot1adExact = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationListExtendedDot1adExact = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationListExtendedDot1adExact = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.payload-ethertype-pppoe"); !data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe.IsNull() {
+		if value.Exists() {
+			data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe = types.BoolValue(true)
+		} else {
+			data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe = types.BoolValue(false)
+		}
+	} else {
+		data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe = types.BoolNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationListExtendedDot1adIngressSourceMac.IsNull() {
+		data.L2transportEncapsulationListExtendedDot1adIngressSourceMac = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationListExtendedDot1adIngressSourceMac = types.StringNull()
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.ingress.destination-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) && !data.L2transportEncapsulationListExtendedDot1adIngressDestinationMac.IsNull() {
+		data.L2transportEncapsulationListExtendedDot1adIngressDestinationMac = types.StringValue(value.String())
+	} else {
+		data.L2transportEncapsulationListExtendedDot1adIngressDestinationMac = types.StringNull()
 	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:rewrite.ingress.tag.pop.one"); !data.RewriteIngressTagPopOne.IsNull() {
 		if value.Exists() {
@@ -4058,16 +5436,433 @@ func (data *InterfaceBundleEtherSubinterface) fromBody(ctx context.Context, res 
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:encapsulation.dot1q.second-dot1q"); value.Exists() && value.Type == gjson.Number {
 		data.EncapsulationDot1qSecondDot1q = types.Int64Value(value.Int())
 	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q"); value.Exists() {
+		data.L2transportEncapsulationDot1q = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1q = types.BoolValue(false)
+	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
 		data.L2transportEncapsulationDot1qVlanId = types.StringValue(value.String())
 	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qEndVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-2"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId2 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-3"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId3 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-4"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId4 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-5"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId5 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-6"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId6 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-7"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId7 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-8"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId8 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-9"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId9 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId9 = types.Int64Value(value.Int())
+	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.second-dot1q"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
 		data.L2transportEncapsulationDot1qSecondDot1q = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.second-dot1q-end-vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qSecondDot1qEndVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.exact"); value.Exists() {
+		data.L2transportEncapsulationDot1qExact = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1qExact = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qIngressSourceMac = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged"); value.Exists() {
+		data.L2transportEncapsulationDot1qPriorityTagged = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTagged = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q"); value.Exists() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1q = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1q = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.exact"); value.Exists() {
+		data.L2transportEncapsulationDot1qPriorityTaggedExact = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedExact = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qPriorityTaggedIngressSourceMac = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad"); value.Exists() {
+		data.L2transportEncapsulationDot1ad = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1ad = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1adVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1adEndVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.dot1q"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1adDot1q = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.dot1q-end-vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1adDot1qEndVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.exact"); value.Exists() {
+		data.L2transportEncapsulationDot1adExact = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1adExact = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1adIngressSourceMac = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged"); value.Exists() {
+		data.L2transportEncapsulationDot1adPriorityTagged = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTagged = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q"); value.Exists() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1q = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1q = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.exact"); value.Exists() {
+		data.L2transportEncapsulationDot1adPriorityTaggedExact = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedExact = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1adPriorityTaggedIngressSourceMac = types.StringValue(value.String())
 	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged"); value.Exists() {
 		data.L2transportEncapsulationUntagged = types.BoolValue(true)
 	} else {
 		data.L2transportEncapsulationUntagged = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q"); value.Exists() {
+		data.L2transportEncapsulationUntaggedDot1q = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationUntaggedDot1q = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationUntaggedDot1qVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationUntaggedIngressSourceMac = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.default"); value.Exists() {
+		data.L2transportEncapsulationDefault = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDefault = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q"); value.Exists() {
+		data.L2transportEncapsulationListExtendedDot1q = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationListExtendedDot1q = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.vlan-ranges"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1qVlanRanges = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.outer-cos"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationListExtendedDot1qOuterCos = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.second-dot1q"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1qSecondDot1q = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.inner-cos"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationListExtendedDot1qInnerCos = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.exact"); value.Exists() {
+		data.L2transportEncapsulationListExtendedDot1qExact = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationListExtendedDot1qExact = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.payload-ethertype-pppoe"); value.Exists() {
+		data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1qIngressSourceMac = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.ingress.destination-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1qIngressDestinationMac = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad"); value.Exists() {
+		data.L2transportEncapsulationListExtendedDot1ad = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationListExtendedDot1ad = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.vlan-ranges"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1adVlanRanges = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.outer-cos"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationListExtendedDot1adOuterCos = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.dot1q"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1adDot1q = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.inner-cos"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationListExtendedDot1adInnerCos = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.exact"); value.Exists() {
+		data.L2transportEncapsulationListExtendedDot1adExact = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationListExtendedDot1adExact = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.payload-ethertype-pppoe"); value.Exists() {
+		data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1adIngressSourceMac = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.ingress.destination-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1adIngressDestinationMac = types.StringValue(value.String())
 	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:rewrite.ingress.tag.pop.one"); value.Exists() {
 		data.RewriteIngressTagPopOne = types.BoolValue(true)
@@ -5228,16 +7023,433 @@ func (data *InterfaceBundleEtherSubinterfaceData) fromBody(ctx context.Context, 
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:encapsulation.dot1q.second-dot1q"); value.Exists() && value.Type == gjson.Number {
 		data.EncapsulationDot1qSecondDot1q = types.Int64Value(value.Int())
 	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q"); value.Exists() {
+		data.L2transportEncapsulationDot1q = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1q = types.BoolValue(false)
+	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
 		data.L2transportEncapsulationDot1qVlanId = types.StringValue(value.String())
 	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qEndVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-2"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId2 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-3"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId3 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-4"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId4 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-5"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId5 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-6"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId6 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-7"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId7 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-8"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId8 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.vlan-id-9"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qVlanId9 = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qEndVlanId9 = types.Int64Value(value.Int())
+	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.second-dot1q"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
 		data.L2transportEncapsulationDot1qSecondDot1q = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.second-dot1q-end-vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qSecondDot1qEndVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.exact"); value.Exists() {
+		data.L2transportEncapsulationDot1qExact = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1qExact = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qIngressSourceMac = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged"); value.Exists() {
+		data.L2transportEncapsulationDot1qPriorityTagged = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTagged = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q"); value.Exists() {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1q = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1q = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.dot1q.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.exact"); value.Exists() {
+		data.L2transportEncapsulationDot1qPriorityTaggedExact = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1qPriorityTaggedExact = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1q.priority-tagged.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1qPriorityTaggedIngressSourceMac = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad"); value.Exists() {
+		data.L2transportEncapsulationDot1ad = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1ad = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1adVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1adEndVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adEndVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.dot1q"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1adDot1q = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.dot1q-end-vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1adDot1qEndVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.exact"); value.Exists() {
+		data.L2transportEncapsulationDot1adExact = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1adExact = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1adIngressSourceMac = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged"); value.Exists() {
+		data.L2transportEncapsulationDot1adPriorityTagged = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTagged = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q"); value.Exists() {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1q = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1q = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.dot1q.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.exact"); value.Exists() {
+		data.L2transportEncapsulationDot1adPriorityTaggedExact = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDot1adPriorityTaggedExact = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.dot1ad.priority-tagged.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationDot1adPriorityTaggedIngressSourceMac = types.StringValue(value.String())
 	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged"); value.Exists() {
 		data.L2transportEncapsulationUntagged = types.BoolValue(true)
 	} else {
 		data.L2transportEncapsulationUntagged = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q"); value.Exists() {
+		data.L2transportEncapsulationUntaggedDot1q = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationUntaggedDot1q = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationUntaggedDot1qVlanId = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-2"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId2 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-3"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId3 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-4"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId4 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-5"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId5 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-6"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId6 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-7"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId7 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-8"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId8 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.dot1q.end-vlan-id-9"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationUntaggedDot1qEndVlanId9 = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.untagged.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationUntaggedIngressSourceMac = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.default"); value.Exists() {
+		data.L2transportEncapsulationDefault = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationDefault = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q"); value.Exists() {
+		data.L2transportEncapsulationListExtendedDot1q = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationListExtendedDot1q = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.vlan-ranges"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1qVlanRanges = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.outer-cos"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationListExtendedDot1qOuterCos = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.second-dot1q"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1qSecondDot1q = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.inner-cos"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationListExtendedDot1qInnerCos = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.exact"); value.Exists() {
+		data.L2transportEncapsulationListExtendedDot1qExact = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationListExtendedDot1qExact = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.payload-ethertype-pppoe"); value.Exists() {
+		data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1qIngressSourceMac = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1q.ingress.destination-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1qIngressDestinationMac = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad"); value.Exists() {
+		data.L2transportEncapsulationListExtendedDot1ad = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationListExtendedDot1ad = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.vlan-ranges"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1adVlanRanges = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.outer-cos"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationListExtendedDot1adOuterCos = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.dot1q"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1adDot1q = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.inner-cos"); value.Exists() && value.Type == gjson.Number {
+		data.L2transportEncapsulationListExtendedDot1adInnerCos = types.Int64Value(value.Int())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.exact"); value.Exists() {
+		data.L2transportEncapsulationListExtendedDot1adExact = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationListExtendedDot1adExact = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.payload-ethertype-pppoe"); value.Exists() {
+		data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe = types.BoolValue(true)
+	} else {
+		data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe = types.BoolValue(false)
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.ingress.source-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1adIngressSourceMac = types.StringValue(value.String())
+	}
+	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation.list-extended.dot1ad.ingress.destination-mac"); value.Exists() && (value.Type == gjson.String || value.Type == gjson.Number) {
+		data.L2transportEncapsulationListExtendedDot1adIngressDestinationMac = types.StringValue(value.String())
 	}
 	if value := gjson.GetBytes(res, "Cisco-IOS-XR-um-l2-ethernet-cfg:rewrite.ingress.tag.pop.one"); value.Exists() {
 		data.RewriteIngressTagPopOne = types.BoolValue(true)
@@ -7722,14 +9934,395 @@ func (data *InterfaceBundleEtherSubinterface) getDeletedItems(ctx context.Contex
 	if !state.RewriteIngressTagPopOne.IsNull() && data.RewriteIngressTagPopOne.IsNull() {
 		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:rewrite/ingress/tag/pop/one"))
 	}
+	if !state.L2transportEncapsulationListExtendedDot1adIngressDestinationMac.IsNull() && data.L2transportEncapsulationListExtendedDot1adIngressDestinationMac.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/ingress/destination-mac"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1adIngressSourceMac.IsNull() && data.L2transportEncapsulationListExtendedDot1adIngressSourceMac.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/ingress/source-mac"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe.IsNull() && data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/payload-ethertype-pppoe"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1adExact.IsNull() && data.L2transportEncapsulationListExtendedDot1adExact.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/exact"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1adInnerCos.IsNull() && data.L2transportEncapsulationListExtendedDot1adInnerCos.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/inner-cos"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1adDot1q.IsNull() && data.L2transportEncapsulationListExtendedDot1adDot1q.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/dot1q"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1adOuterCos.IsNull() && data.L2transportEncapsulationListExtendedDot1adOuterCos.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/outer-cos"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1adVlanRanges.IsNull() && data.L2transportEncapsulationListExtendedDot1adVlanRanges.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/vlan-ranges"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1ad.IsNull() && data.L2transportEncapsulationListExtendedDot1ad.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1qIngressDestinationMac.IsNull() && data.L2transportEncapsulationListExtendedDot1qIngressDestinationMac.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/ingress/destination-mac"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1qIngressSourceMac.IsNull() && data.L2transportEncapsulationListExtendedDot1qIngressSourceMac.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/ingress/source-mac"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe.IsNull() && data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/payload-ethertype-pppoe"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1qExact.IsNull() && data.L2transportEncapsulationListExtendedDot1qExact.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/exact"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1qInnerCos.IsNull() && data.L2transportEncapsulationListExtendedDot1qInnerCos.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/inner-cos"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1qSecondDot1q.IsNull() && data.L2transportEncapsulationListExtendedDot1qSecondDot1q.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/second-dot1q"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1qOuterCos.IsNull() && data.L2transportEncapsulationListExtendedDot1qOuterCos.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/outer-cos"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1qVlanRanges.IsNull() && data.L2transportEncapsulationListExtendedDot1qVlanRanges.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/vlan-ranges"))
+	}
+	if !state.L2transportEncapsulationListExtendedDot1q.IsNull() && data.L2transportEncapsulationListExtendedDot1q.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q"))
+	}
+	if !state.L2transportEncapsulationDefault.IsNull() && data.L2transportEncapsulationDefault.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/default"))
+	}
+	if !state.L2transportEncapsulationUntaggedIngressSourceMac.IsNull() && data.L2transportEncapsulationUntaggedIngressSourceMac.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/ingress/source-mac"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qEndVlanId9.IsNull() && data.L2transportEncapsulationUntaggedDot1qEndVlanId9.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-9"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qVlanId9.IsNull() && data.L2transportEncapsulationUntaggedDot1qVlanId9.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-9"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qEndVlanId8.IsNull() && data.L2transportEncapsulationUntaggedDot1qEndVlanId8.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-8"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qVlanId8.IsNull() && data.L2transportEncapsulationUntaggedDot1qVlanId8.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-8"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qEndVlanId7.IsNull() && data.L2transportEncapsulationUntaggedDot1qEndVlanId7.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-7"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qVlanId7.IsNull() && data.L2transportEncapsulationUntaggedDot1qVlanId7.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-7"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qEndVlanId6.IsNull() && data.L2transportEncapsulationUntaggedDot1qEndVlanId6.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-6"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qVlanId6.IsNull() && data.L2transportEncapsulationUntaggedDot1qVlanId6.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-6"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qEndVlanId5.IsNull() && data.L2transportEncapsulationUntaggedDot1qEndVlanId5.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-5"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qVlanId5.IsNull() && data.L2transportEncapsulationUntaggedDot1qVlanId5.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-5"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qEndVlanId4.IsNull() && data.L2transportEncapsulationUntaggedDot1qEndVlanId4.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-4"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qVlanId4.IsNull() && data.L2transportEncapsulationUntaggedDot1qVlanId4.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-4"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qEndVlanId3.IsNull() && data.L2transportEncapsulationUntaggedDot1qEndVlanId3.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-3"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qVlanId3.IsNull() && data.L2transportEncapsulationUntaggedDot1qVlanId3.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-3"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qEndVlanId2.IsNull() && data.L2transportEncapsulationUntaggedDot1qEndVlanId2.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-2"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qVlanId2.IsNull() && data.L2transportEncapsulationUntaggedDot1qVlanId2.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-2"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qEndVlanId.IsNull() && data.L2transportEncapsulationUntaggedDot1qEndVlanId.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1qVlanId.IsNull() && data.L2transportEncapsulationUntaggedDot1qVlanId.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id"))
+	}
+	if !state.L2transportEncapsulationUntaggedDot1q.IsNull() && data.L2transportEncapsulationUntaggedDot1q.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q"))
+	}
 	if !state.L2transportEncapsulationUntagged.IsNull() && data.L2transportEncapsulationUntagged.IsNull() {
 		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedIngressSourceMac.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedIngressSourceMac.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/ingress/source-mac"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedExact.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedExact.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/exact"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId9.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId9.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-9"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId9.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId9.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-9"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId8.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId8.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-8"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId8.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId8.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-8"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId7.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId7.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-7"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId7.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId7.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-7"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId6.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId6.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-6"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId6.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId6.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-6"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId5.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId5.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-5"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId5.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId5.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-5"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId4.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId4.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-4"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId4.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId4.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-4"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId3.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId3.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-3"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId3.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId3.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-3"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId2.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId2.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-2"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId2.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId2.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-2"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTaggedDot1q.IsNull() && data.L2transportEncapsulationDot1adPriorityTaggedDot1q.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q"))
+	}
+	if !state.L2transportEncapsulationDot1adPriorityTagged.IsNull() && data.L2transportEncapsulationDot1adPriorityTagged.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged"))
+	}
+	if !state.L2transportEncapsulationDot1adIngressSourceMac.IsNull() && data.L2transportEncapsulationDot1adIngressSourceMac.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/ingress/source-mac"))
+	}
+	if !state.L2transportEncapsulationDot1adExact.IsNull() && data.L2transportEncapsulationDot1adExact.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/exact"))
+	}
+	if !state.L2transportEncapsulationDot1adDot1qEndVlanId.IsNull() && data.L2transportEncapsulationDot1adDot1qEndVlanId.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/dot1q-end-vlan-id"))
+	}
+	if !state.L2transportEncapsulationDot1adDot1q.IsNull() && data.L2transportEncapsulationDot1adDot1q.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/dot1q"))
+	}
+	if !state.L2transportEncapsulationDot1adEndVlanId9.IsNull() && data.L2transportEncapsulationDot1adEndVlanId9.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-9"))
+	}
+	if !state.L2transportEncapsulationDot1adVlanId9.IsNull() && data.L2transportEncapsulationDot1adVlanId9.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-9"))
+	}
+	if !state.L2transportEncapsulationDot1adEndVlanId8.IsNull() && data.L2transportEncapsulationDot1adEndVlanId8.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-8"))
+	}
+	if !state.L2transportEncapsulationDot1adVlanId8.IsNull() && data.L2transportEncapsulationDot1adVlanId8.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-8"))
+	}
+	if !state.L2transportEncapsulationDot1adEndVlanId7.IsNull() && data.L2transportEncapsulationDot1adEndVlanId7.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-7"))
+	}
+	if !state.L2transportEncapsulationDot1adVlanId7.IsNull() && data.L2transportEncapsulationDot1adVlanId7.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-7"))
+	}
+	if !state.L2transportEncapsulationDot1adEndVlanId6.IsNull() && data.L2transportEncapsulationDot1adEndVlanId6.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-6"))
+	}
+	if !state.L2transportEncapsulationDot1adVlanId6.IsNull() && data.L2transportEncapsulationDot1adVlanId6.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-6"))
+	}
+	if !state.L2transportEncapsulationDot1adEndVlanId5.IsNull() && data.L2transportEncapsulationDot1adEndVlanId5.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-5"))
+	}
+	if !state.L2transportEncapsulationDot1adVlanId5.IsNull() && data.L2transportEncapsulationDot1adVlanId5.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-5"))
+	}
+	if !state.L2transportEncapsulationDot1adEndVlanId4.IsNull() && data.L2transportEncapsulationDot1adEndVlanId4.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-4"))
+	}
+	if !state.L2transportEncapsulationDot1adVlanId4.IsNull() && data.L2transportEncapsulationDot1adVlanId4.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-4"))
+	}
+	if !state.L2transportEncapsulationDot1adEndVlanId3.IsNull() && data.L2transportEncapsulationDot1adEndVlanId3.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-3"))
+	}
+	if !state.L2transportEncapsulationDot1adVlanId3.IsNull() && data.L2transportEncapsulationDot1adVlanId3.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-3"))
+	}
+	if !state.L2transportEncapsulationDot1adEndVlanId2.IsNull() && data.L2transportEncapsulationDot1adEndVlanId2.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-2"))
+	}
+	if !state.L2transportEncapsulationDot1adVlanId2.IsNull() && data.L2transportEncapsulationDot1adVlanId2.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-2"))
+	}
+	if !state.L2transportEncapsulationDot1adEndVlanId.IsNull() && data.L2transportEncapsulationDot1adEndVlanId.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id"))
+	}
+	if !state.L2transportEncapsulationDot1adVlanId.IsNull() && data.L2transportEncapsulationDot1adVlanId.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id"))
+	}
+	if !state.L2transportEncapsulationDot1ad.IsNull() && data.L2transportEncapsulationDot1ad.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedIngressSourceMac.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedIngressSourceMac.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/ingress/source-mac"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedExact.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedExact.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/exact"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId9.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId9.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-9"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId9.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId9.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-9"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId8.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId8.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-8"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId8.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId8.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-8"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId7.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId7.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-7"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId7.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId7.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-7"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId6.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId6.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-6"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId6.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId6.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-6"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId5.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId5.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-5"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId5.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId5.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-5"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId4.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId4.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-4"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId4.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId4.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-4"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId3.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId3.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-3"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId3.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId3.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-3"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId2.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId2.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-2"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId2.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId2.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-2"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTaggedDot1q.IsNull() && data.L2transportEncapsulationDot1qPriorityTaggedDot1q.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q"))
+	}
+	if !state.L2transportEncapsulationDot1qPriorityTagged.IsNull() && data.L2transportEncapsulationDot1qPriorityTagged.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged"))
+	}
+	if !state.L2transportEncapsulationDot1qIngressSourceMac.IsNull() && data.L2transportEncapsulationDot1qIngressSourceMac.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/ingress/source-mac"))
+	}
+	if !state.L2transportEncapsulationDot1qExact.IsNull() && data.L2transportEncapsulationDot1qExact.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/exact"))
+	}
+	if !state.L2transportEncapsulationDot1qSecondDot1qEndVlanId.IsNull() && data.L2transportEncapsulationDot1qSecondDot1qEndVlanId.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/second-dot1q-end-vlan-id"))
 	}
 	if !state.L2transportEncapsulationDot1qSecondDot1q.IsNull() && data.L2transportEncapsulationDot1qSecondDot1q.IsNull() {
 		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/second-dot1q"))
 	}
+	if !state.L2transportEncapsulationDot1qEndVlanId9.IsNull() && data.L2transportEncapsulationDot1qEndVlanId9.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-9"))
+	}
+	if !state.L2transportEncapsulationDot1qVlanId9.IsNull() && data.L2transportEncapsulationDot1qVlanId9.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-9"))
+	}
+	if !state.L2transportEncapsulationDot1qEndVlanId8.IsNull() && data.L2transportEncapsulationDot1qEndVlanId8.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-8"))
+	}
+	if !state.L2transportEncapsulationDot1qVlanId8.IsNull() && data.L2transportEncapsulationDot1qVlanId8.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-8"))
+	}
+	if !state.L2transportEncapsulationDot1qEndVlanId7.IsNull() && data.L2transportEncapsulationDot1qEndVlanId7.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-7"))
+	}
+	if !state.L2transportEncapsulationDot1qVlanId7.IsNull() && data.L2transportEncapsulationDot1qVlanId7.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-7"))
+	}
+	if !state.L2transportEncapsulationDot1qEndVlanId6.IsNull() && data.L2transportEncapsulationDot1qEndVlanId6.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-6"))
+	}
+	if !state.L2transportEncapsulationDot1qVlanId6.IsNull() && data.L2transportEncapsulationDot1qVlanId6.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-6"))
+	}
+	if !state.L2transportEncapsulationDot1qEndVlanId5.IsNull() && data.L2transportEncapsulationDot1qEndVlanId5.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-5"))
+	}
+	if !state.L2transportEncapsulationDot1qVlanId5.IsNull() && data.L2transportEncapsulationDot1qVlanId5.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-5"))
+	}
+	if !state.L2transportEncapsulationDot1qEndVlanId4.IsNull() && data.L2transportEncapsulationDot1qEndVlanId4.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-4"))
+	}
+	if !state.L2transportEncapsulationDot1qVlanId4.IsNull() && data.L2transportEncapsulationDot1qVlanId4.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-4"))
+	}
+	if !state.L2transportEncapsulationDot1qEndVlanId3.IsNull() && data.L2transportEncapsulationDot1qEndVlanId3.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-3"))
+	}
+	if !state.L2transportEncapsulationDot1qVlanId3.IsNull() && data.L2transportEncapsulationDot1qVlanId3.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-3"))
+	}
+	if !state.L2transportEncapsulationDot1qEndVlanId2.IsNull() && data.L2transportEncapsulationDot1qEndVlanId2.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-2"))
+	}
+	if !state.L2transportEncapsulationDot1qVlanId2.IsNull() && data.L2transportEncapsulationDot1qVlanId2.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-2"))
+	}
+	if !state.L2transportEncapsulationDot1qEndVlanId.IsNull() && data.L2transportEncapsulationDot1qEndVlanId.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id"))
+	}
 	if !state.L2transportEncapsulationDot1qVlanId.IsNull() && data.L2transportEncapsulationDot1qVlanId.IsNull() {
 		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id"))
+	}
+	if !state.L2transportEncapsulationDot1q.IsNull() && data.L2transportEncapsulationDot1q.IsNull() {
+		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q"))
 	}
 	if !state.EncapsulationDot1qSecondDot1q.IsNull() && data.EncapsulationDot1qSecondDot1q.IsNull() {
 		deletedItems = append(deletedItems, path.Join(state.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:encapsulation/dot1q/second-dot1q"))
@@ -8280,8 +10873,62 @@ func (data *InterfaceBundleEtherSubinterface) getEmptyLeafsDelete(ctx context.Co
 	if !data.RewriteIngressTagPopOne.IsNull() && !data.RewriteIngressTagPopOne.ValueBool() {
 		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:rewrite/ingress/tag/pop/one"))
 	}
+	if !data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe.IsNull() && !data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/payload-ethertype-pppoe"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adExact.IsNull() && !data.L2transportEncapsulationListExtendedDot1adExact.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/exact"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1ad.IsNull() && !data.L2transportEncapsulationListExtendedDot1ad.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe.IsNull() && !data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/payload-ethertype-pppoe"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qExact.IsNull() && !data.L2transportEncapsulationListExtendedDot1qExact.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/exact"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1q.IsNull() && !data.L2transportEncapsulationListExtendedDot1q.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q"))
+	}
+	if !data.L2transportEncapsulationDefault.IsNull() && !data.L2transportEncapsulationDefault.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/default"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1q.IsNull() && !data.L2transportEncapsulationUntaggedDot1q.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q"))
+	}
 	if !data.L2transportEncapsulationUntagged.IsNull() && !data.L2transportEncapsulationUntagged.ValueBool() {
 		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedExact.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedExact.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/exact"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1q.IsNull() && !data.L2transportEncapsulationDot1adPriorityTaggedDot1q.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTagged.IsNull() && !data.L2transportEncapsulationDot1adPriorityTagged.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged"))
+	}
+	if !data.L2transportEncapsulationDot1adExact.IsNull() && !data.L2transportEncapsulationDot1adExact.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/exact"))
+	}
+	if !data.L2transportEncapsulationDot1ad.IsNull() && !data.L2transportEncapsulationDot1ad.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedExact.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedExact.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/exact"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1q.IsNull() && !data.L2transportEncapsulationDot1qPriorityTaggedDot1q.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTagged.IsNull() && !data.L2transportEncapsulationDot1qPriorityTagged.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged"))
+	}
+	if !data.L2transportEncapsulationDot1qExact.IsNull() && !data.L2transportEncapsulationDot1qExact.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/exact"))
+	}
+	if !data.L2transportEncapsulationDot1q.IsNull() && !data.L2transportEncapsulationDot1q.ValueBool() {
+		emptyLeafsDelete = append(emptyLeafsDelete, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q"))
 	}
 	for i := range data.ServicePolicyOutput {
 		keys := [...]string{"service-policy-name"}
@@ -9159,14 +11806,395 @@ func (data *InterfaceBundleEtherSubinterface) getDeletePaths(ctx context.Context
 	if !data.RewriteIngressTagPopOne.IsNull() {
 		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:rewrite/ingress/tag/pop/one"))
 	}
+	if !data.L2transportEncapsulationListExtendedDot1adIngressDestinationMac.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/ingress/destination-mac"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adIngressSourceMac.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/ingress/source-mac"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adPayloadEthertypePppoe.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/payload-ethertype-pppoe"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adExact.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/exact"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adInnerCos.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/inner-cos"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adDot1q.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/dot1q"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adOuterCos.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/outer-cos"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1adVlanRanges.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad/vlan-ranges"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1ad.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1ad"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qIngressDestinationMac.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/ingress/destination-mac"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qIngressSourceMac.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/ingress/source-mac"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qPayloadEthertypePppoe.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/payload-ethertype-pppoe"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qExact.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/exact"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qInnerCos.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/inner-cos"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qSecondDot1q.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/second-dot1q"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qOuterCos.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/outer-cos"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1qVlanRanges.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q/vlan-ranges"))
+	}
+	if !data.L2transportEncapsulationListExtendedDot1q.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/list-extended/dot1q"))
+	}
+	if !data.L2transportEncapsulationDefault.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/default"))
+	}
+	if !data.L2transportEncapsulationUntaggedIngressSourceMac.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/ingress/source-mac"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId9.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-9"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId9.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-9"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId8.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-8"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId8.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-8"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId7.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-7"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId7.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-7"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId6.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-6"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId6.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-6"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId5.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-5"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId5.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-5"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId4.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-4"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId4.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-4"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId3.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-3"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId3.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-3"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId2.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id-2"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId2.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id-2"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qEndVlanId.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/end-vlan-id"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1qVlanId.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q/vlan-id"))
+	}
+	if !data.L2transportEncapsulationUntaggedDot1q.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged/dot1q"))
+	}
 	if !data.L2transportEncapsulationUntagged.IsNull() {
 		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/untagged"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedIngressSourceMac.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/ingress/source-mac"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedExact.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/exact"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId9.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-9"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId9.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-9"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId8.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-8"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId8.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-8"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId7.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-7"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId7.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-7"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId6.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-6"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId6.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-6"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId5.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-5"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId5.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-5"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId4.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-4"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId4.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-4"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId3.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-3"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId3.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-3"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId2.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id-2"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId2.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id-2"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qEndVlanId.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/end-vlan-id"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1qVlanId.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q/vlan-id"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTaggedDot1q.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged/dot1q"))
+	}
+	if !data.L2transportEncapsulationDot1adPriorityTagged.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/priority-tagged"))
+	}
+	if !data.L2transportEncapsulationDot1adIngressSourceMac.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/ingress/source-mac"))
+	}
+	if !data.L2transportEncapsulationDot1adExact.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/exact"))
+	}
+	if !data.L2transportEncapsulationDot1adDot1qEndVlanId.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/dot1q-end-vlan-id"))
+	}
+	if !data.L2transportEncapsulationDot1adDot1q.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/dot1q"))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId9.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-9"))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId9.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-9"))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId8.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-8"))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId8.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-8"))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId7.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-7"))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId7.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-7"))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId6.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-6"))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId6.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-6"))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId5.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-5"))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId5.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-5"))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId4.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-4"))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId4.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-4"))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId3.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-3"))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId3.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-3"))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId2.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id-2"))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId2.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id-2"))
+	}
+	if !data.L2transportEncapsulationDot1adEndVlanId.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/end-vlan-id"))
+	}
+	if !data.L2transportEncapsulationDot1adVlanId.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad/vlan-id"))
+	}
+	if !data.L2transportEncapsulationDot1ad.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1ad"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedIngressSourceMac.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/ingress/source-mac"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedExact.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/exact"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId9.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-9"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId9.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-9"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId8.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-8"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId8.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-8"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId7.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-7"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId7.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-7"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId6.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-6"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId6.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-6"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId5.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-5"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId5.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-5"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId4.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-4"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId4.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-4"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId3.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-3"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId3.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-3"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId2.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id-2"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId2.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id-2"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qEndVlanId.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/end-vlan-id"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1qVlanId.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q/vlan-id"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTaggedDot1q.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged/dot1q"))
+	}
+	if !data.L2transportEncapsulationDot1qPriorityTagged.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/priority-tagged"))
+	}
+	if !data.L2transportEncapsulationDot1qIngressSourceMac.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/ingress/source-mac"))
+	}
+	if !data.L2transportEncapsulationDot1qExact.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/exact"))
+	}
+	if !data.L2transportEncapsulationDot1qSecondDot1qEndVlanId.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/second-dot1q-end-vlan-id"))
 	}
 	if !data.L2transportEncapsulationDot1qSecondDot1q.IsNull() {
 		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/second-dot1q"))
 	}
+	if !data.L2transportEncapsulationDot1qEndVlanId9.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-9"))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId9.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-9"))
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId8.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-8"))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId8.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-8"))
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId7.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-7"))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId7.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-7"))
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId6.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-6"))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId6.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-6"))
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId5.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-5"))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId5.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-5"))
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId4.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-4"))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId4.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-4"))
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId3.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-3"))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId3.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-3"))
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId2.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id-2"))
+	}
+	if !data.L2transportEncapsulationDot1qVlanId2.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id-2"))
+	}
+	if !data.L2transportEncapsulationDot1qEndVlanId.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/end-vlan-id"))
+	}
 	if !data.L2transportEncapsulationDot1qVlanId.IsNull() {
 		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q/vlan-id"))
+	}
+	if !data.L2transportEncapsulationDot1q.IsNull() {
+		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:l2transport-encapsulation/dot1q"))
 	}
 	if !data.EncapsulationDot1qSecondDot1q.IsNull() {
 		deletePaths = append(deletePaths, path.Join(data.getPath(), "Cisco-IOS-XR-um-l2-ethernet-cfg:encapsulation/dot1q/second-dot1q"))
